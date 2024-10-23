@@ -1,4 +1,4 @@
-van Eyk Research
-================
+Resume
+======
 
-Examples of my work while I was at van Eyk
+Examples of my work
