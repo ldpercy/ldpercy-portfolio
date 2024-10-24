@@ -6,6 +6,8 @@ At the time van Eyk were considered Australia's most respected financial researc
 Clients and business relationships included BT, Coin (Macquarie), Oasis, OnePath, AMP, Count, Morningstar, Aspect Huntley, IRESS, FundData, Core Equity Services (CommSec), Bloomberg.
 
 
+
+
 Fund and Share profiles
 -----------------------
 
@@ -26,3 +28,27 @@ https://github.com/apache/xmlgraphics-fop
 All charts and graphics were done in SVG, so the reports had very high quality images with very small file sizes.
 
 Share charts were produced with a custom engine I wrote myself; fund charts were from an engine written by one of my colleagues.
+
+
+
+Technologies
+------------
+* ColdFusion
+* HTML
+* JavaScript
+* CSS
+* SVG
+* Apache FOP
+* Java
+* Windows Server
+* IIS
+* HTTPS
+* Microsoft SQL Server
+* SOAP
+* Eclipse
+* Jira, Confluence etc (on-prem and OnDemand)
+* Visual Sourcesafe
+* Subversion
+* Ubuntu
+* VMWare
+
