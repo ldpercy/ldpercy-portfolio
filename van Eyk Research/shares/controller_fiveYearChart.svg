@@ -1,237 +1,235 @@
-
-
 <svg width="600px" height="400px" viewBox="0 0 15001 10001" onload="viewFiveYearChart('foo');omoutTwelveMonthLinkGroup('bar');" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMin meet" zoomAndPan="magnify">
-    <style type="text/css">
-        <![CDATA[
-        text.chartTitle { fill:navy; font-size:400; text-anchor:middle; }
-        path.price          { stroke:red ; stroke-width:50; stroke-linejoin:round; stroke-linecap:round; fill:none; }
-        path.movingAverage  { stroke:lime ; stroke-width:25; stroke-linejoin:round; stroke-linecap:round; fill:none; }
-        path.eps            { stroke:blue ; marker:url(#epsMarker); fill:none; stroke-dasharray:50,50 ; stroke-width:25 }
-        path.epsfc          { stroke:green ; marker-mid:url(#epsfcMarker); marker-end:url(#epsfcMarker) ; fill:none; stroke-dasharray:50,50 ; stroke-width:25}
-        text.xAxisLabels    { font-size:300; text-anchor:middle; }
-        text.priceLabels    { font-size:300; text-anchor:end; baseline-shift:-30% }
-        text.EPSLabels      { font-size:300; text-anchor:start; baseline-shift:-30% }
-        text.xAxisTitle     { fill:teal; font-size:400; text-anchor:middle; }
-        text.yAxisTitle     { fill:teal; font-size:400; text-anchor:middle; }
-        path.axes           { fill:none; stroke:black; stroke-width:50 ; shape-rendering:crispEdges }
-        text.legendText     { fill:navy; font-size:300; }
-        circle.epsMarker    { fill:blue ; stroke:darkblue }
-        circle.epsfcMarker  { fill:green ; stroke:darkgreen }
-        rect.twelveMonthZoom      { fill:white ; fill-opacity:0.9 ; stroke-width:10 ; stroke:orange ; stroke-linejoin:round ; stroke-dasharray:200 200 }
-        .hide           { stroke:none ; fill:white ; fill-opacity:0 }    
-        
-        text.changeViewLink   { font-size:350 ; text-anchor:middle;}
-        g.fiveYearChart     {  }
-        g.twelveMonthChart     {  }
-        ]]>
-    </style>
-    <script type="text/ecmascript">
-        <![CDATA[
-        function omoverTwelveMonthLinkGroup(evt)
-        {     
-            if(svgDocument.getElementById('twelveMonthHighlights').getAttribute('visibility') == 'visible')
-            {
-                svgDocument.getElementById('twelveMonthLink').setAttribute('text-decoration','underline');
-                svgDocument.getElementById('twelveMonthBox').setAttribute('opacity',1);
-                svgDocument.getElementById('twelveMonthChart').setAttribute('opacity',1);
-            }
-        }
-        
-        function omoutTwelveMonthLinkGroup(evt)
-        {
-            if(svgDocument.getElementById('twelveMonthHighlights').getAttribute('visibility') == 'visible')
-            {
-                svgDocument.getElementById('twelveMonthBox').setAttribute('opacity',0);
-                svgDocument.getElementById('twelveMonthChart').setAttribute('opacity',0);
-                svgDocument.getElementById('twelveMonthLink').setAttribute('text-decoration','none');
-            }
-        }
-        
-        /*function omover12mChart()
-        {   
-            if(svgDocument.getElementById('twelveMonthLink').getAttribute('visibility') == 'visible')
-            {
-                svgDocument.getElementById('twelveMonthBox').setAttribute('opacity',1);
-                svgDocument.getElementById('twelveMonthChart').setAttribute('opacity',1);
-            }
-        }
-        
-        /*function oc12mChart()
-        {
-            if(svgDocument.getElementById('twelveMonthLink').getAttribute('visibility') == 'visible')
-                viewTwelveMonthChart('foo')
-        }*/
+	<style type="text/css">
+		<![CDATA[
+		text.chartTitle { fill:navy; font-size:400; text-anchor:middle; }
+		path.price          { stroke:red ; stroke-width:50; stroke-linejoin:round; stroke-linecap:round; fill:none; }
+		path.movingAverage  { stroke:lime ; stroke-width:25; stroke-linejoin:round; stroke-linecap:round; fill:none; }
+		path.eps            { stroke:blue ; marker:url(#epsMarker); fill:none; stroke-dasharray:50,50 ; stroke-width:25 }
+		path.epsfc          { stroke:green ; marker-mid:url(#epsfcMarker); marker-end:url(#epsfcMarker) ; fill:none; stroke-dasharray:50,50 ; stroke-width:25}
+		text.xAxisLabels    { font-size:300; text-anchor:middle; }
+		text.priceLabels    { font-size:300; text-anchor:end; baseline-shift:-30% }
+		text.EPSLabels      { font-size:300; text-anchor:start; baseline-shift:-30% }
+		text.xAxisTitle     { fill:teal; font-size:400; text-anchor:middle; }
+		text.yAxisTitle     { fill:teal; font-size:400; text-anchor:middle; }
+		path.axes           { fill:none; stroke:black; stroke-width:50 ; shape-rendering:crispEdges }
+		text.legendText     { fill:navy; font-size:300; }
+		circle.epsMarker    { fill:blue ; stroke:darkblue }
+		circle.epsfcMarker  { fill:green ; stroke:darkgreen }
+		rect.twelveMonthZoom      { fill:white ; fill-opacity:0.9 ; stroke-width:10 ; stroke:orange ; stroke-linejoin:round ; stroke-dasharray:200 200 }
+		.hide           { stroke:none ; fill:white ; fill-opacity:0 }
 
-        function viewTwelveMonthChart(evt)
-        {
-            svgDocument.getElementById('twelveMonthChart').setAttribute('opacity',1);
-            svgDocument.getElementById('twelveMonthHighlights').setAttribute('visibility','hidden');
-            svgDocument.getElementById('fiveYearLink').setAttribute('visibility','visible');
-        }
-        
-        function viewFiveYearChart(evt)
-        {
-            svgDocument.getElementById('fiveYearLink').setAttribute("visibility","hidden");
-            svgDocument.getElementById('twelveMonthHighlights').setAttribute('visibility','visible');
-            
-        }
-        // ]]>
-    </script>
-    <defs>
-        <g id="chartTitle">
-            <desc>Chart Title</desc>
-            <text class="chartTitle" x="0" y="500">Downer Edi Limited</text>
-        </g>
-        <g id="legend">
-            <name>Legend</name>
-            <g style="fill:gray; stroke:black; stroke-width:0" shape-rendering="crispEdges">
-                <rect x="100" y="100" width="12000" height="500"/>
-            </g>
-            <g style="fill:white; stroke:black; stroke-width:6" shape-rendering="crispEdges">
-                <rect x="0" y="0" width="12000" height="500"/>
-            </g>
-            <g>
-                <path class="price" d="M 300 300 h 500"/>
-                <text x="1000" y="400" class="legendText">DOW Price</text>
-                <path class="movingAverage" d="M 3300 300 h 500"/>
-                <text x="4000" y="400" class="legendText">Moving Average</text>
-                <path class="eps" d="M 6800 300 h 500"/>
-                <text x="7500" y="400" class="legendText">EPS</text>
-                <path class="epsfc" d="M 9300 300 h 500"/>
-                <text x="10000" y="400" class="legendText">EPS Forecast</text>
-            </g>
-        </g>
-        
-        <g id="xAxisTitle">
-            <desc>X Axis Title</desc>
-            <text x="0" y="0" class="xAxisTitle">Date</text>
-        </g>
-        <g id="yAxisTitle">
-            <desc>Y Axis Title</desc>
-            <text x="0" y="0" class="yAxisTitle">Price ($)</text>
-        </g>
-        <marker id="epsMarker" markerWidth="10" markerHeight="10" refX="5" refY="5">
-            <circle class="epsMarker" cx="5" cy="5" r="4"/>
-        </marker>
-        <marker id="epsfcMarker" markerWidth="10" markerHeight="10" refX="5" refY="5">
-            <circle class="epsfcMarker" cx="5" cy="5" r="4"/>
-        </marker>
-    </defs>
-    
-    
-    <g>
-        <desc>Border Box</desc>
-        <rect x="0" y="0" width="14000" height="10000" style="fill:white; stroke:black; stroke-width:15" shape-rendering="crispEdges"/>
-    </g>
-    
-    <g id="debug" transform="translate(2100,1900)">
-        <desc>Some numbers for debug purposes</desc>
-        <text style="font-size:200;fill:grey"><tspan x="0" y="250">start of model script</tspan></text>           
-    </g>
-    <g id="fiveYearChart" class="fiveYearChart">
-        <desc>This is the five Year chart</desc>
-        
-        <use xlink:href="#legend" x="1000" y="9000"/>
-        
-        <g transform="translate(2000,2000)">
-            <desc>Chart Area</desc>
-            <path class="epsfc" d=" M  6416 5900 7735 5500 9163 4300"/>
-            <path class="eps" d=" M  2132 600 3560 4300 4992 5100 6416 5900"/>
-            <path class="movingAverage" d=" M  348.2 4958 465.6 4936 582.9 4881 704.2 4850 825.5 4775 939 4705 1064 4646 1185 4704 1776 4669 1894 4681 2132 4563 2254 4463 2375 4404 2492 4388 2610 4429 3204 3871 3322 3804 3443 3742 3560 3731 3678 3792 3803 3823 3920 3881 4034 3912 4515 4119 4636 4096 4746 4138 4875 4169 4992 3969 5113 3938 5235 3877 5348 3815 5473 3735 5591 3688 6060 3485 6182 3538 6303 3464 6416 3395 6541 3433 6663 3341 6772 3318"/>
-            <path class="price" d=" M  348.2 4800 465.6 4800 582.9 4500 704.2 4600 825.5 4100 939 4000 1064 4000 1185 5400 1776 4800 1894 4950 2132 3200 2254 3400 2375 3400 2492 3800 2610 4500 3204 4000 3322 4000 3443 4200 3560 3600 3678 4000 3803 3800 3920 4150 4034 4200 4515 4500 4636 2900 4746 4550 4875 4400 4992 1600 5113 3200 5235 3200 5348 3000 5473 3100 5591 3600 6060 4800 6182 3600 6303 3580 6416 3500 6541 2100 6663 2000 6772 2900 6948 3000 6956 900 6960 1100 6964 1100 6968 1100 6972 1100 6976 1100 6980 1200 6984 1200 6987 1100 6991 900 6995 900 6999 900 7003 900 7007 1000 7011 1000 7015 1000 7019 1200 7023 1200 7027 1200 7031 1100 7034 1000 7038 1100 7042 800 7046 500 7050 500 7054 500 7058 500 7062 500 7066 1000 7070 1100 7074 1100 7077 1200 7081 1200 7085 1200 7089 1200 7093 1200 7097 1200 7109 1200 7113 1200 7117 1200 7121 1200 7124 1200 7128 1300 7132 1300 7136 1300 7140 1500 7148 1200 7152 1200 7156 1200 7160 1200 7164 1200 7167 1200 7171 1000 7175 1200 7179 1200 7183 1200 7187 1200 7191 1200 7195 1100 7199 1300 7203 1200 7207 1400 7210 1300 7214 1300 7218 1300 7222 1300 7226 1400 7230 1300 7234 1400 7238 1400 7242 1400 7246 1400 7250 1400 7254 1400 7257 1100 7261 1000 7359 1000 7363 900 7367 800 7371 600 7375 700 7379 700 7383 700 7387 600 7390 600 7394 600 7398 600 7402 600 7406 600 7410 600 7414 500 7418 500 7422 600 7426 600 7430 100 7433 100 7437 100 7441 200 7445 200 7449 0 7453 100 7457 0 7461 0 7469 100 7473 100 7477 100 7559 1300"/>
-       
-            <path class="axes" d="M 0 6000 v 100 M 1429 6000 v 100 M 2857 6000 v 100 M 4286 6000 v 100 M 5714 6000 v 100 M 7143 6000 v 100 M 8571 6000 v 100 M 10000 6000 v 100 "/>
-            <text id="XLabels" class="xAxisLabels">
-                <desc>X Axis Marker Labels for Five Year Chart</desc>
-                <tspan x="0" y="6500">1997</tspan><tspan x="1429" y="6500">1998</tspan><tspan x="2857" y="6500">1999</tspan><tspan x="4286" y="6500">2000</tspan><tspan x="5714" y="6500">2001</tspan><tspan x="7143" y="6500">2002</tspan><tspan x="8571" y="6500">2003</tspan><tspan x="10000" y="6500">2004</tspan>
-            </text>
-            <path class="axes" d="M 0 0 h -100 M 0 1000 h -100 M 0 2000 h -100 M 0 3000 h -100 M 0 4000 h -100 M 0 5000 h -100 "/>
-            <text id="YLabels" class="priceLabels">
-                <desc>Y Axis Marker Labels for fiveYearPrice</desc>
-                <tspan x="-300" y="6000">  0.30</tspan><tspan x="-300" y="5000">  0.40</tspan><tspan x="-300" y="4000">  0.50</tspan><tspan x="-300" y="3000">  0.60</tspan><tspan x="-300" y="2000">  0.70</tspan><tspan x="-300" y="1000">  0.80</tspan>
-            </text>
-            <path class="axes" d="M 10000 0 v 6000"/>
-            <path class="axes" d="M 10000 0 h 100 M 10000 1000 h 100 M 10000 2000 h 100 M 10000 3000 h 100 M 10000 4000 h 100 M 10000 5000 h 100 M 10000 6000 h 100 "/>
-            <text id="EPSLabels" class="EPSLabels">
-                <desc>Y Axis Marker Labels for eps</desc>
-                <tspan x="10300" y="6000">  0.06</tspan><tspan x="10300" y="5000">  0.07</tspan><tspan x="10300" y="4000">  0.08</tspan><tspan x="10300" y="3000">  0.09</tspan><tspan x="10300" y="2000">  0.10</tspan><tspan x="10300" y="1000">  0.11</tspan><tspan x="10300" y="0">  0.12</tspan>    
-            </text>
-            <animate id="fadeOutFiveYear" attributeType="CSS" attributeName="opacity"
-                from="1" to="0" begin="twelveMonthLinkGroup.click" dur="1s" fill="freeze"/>
-            <animate id="fadeInFiveYear" attributeType="CSS" attributeName="opacity"
-                from="0" to="1" begin="fiveYearLink.click" dur="1s" fill="freeze"/>
-        </g>
-    </g>
-    
-    <g id="twelveMonthLinkGroup" onmouseover="omoverTwelveMonthLinkGroup(evt)" onmouseout="omoutTwelveMonthLinkGroup(evt)" onclick="viewTwelveMonthChart(evt)">
-        <g id="twelveMonthHighlights">
-            <desc>The Twelve Month Highlights: the box and text link that change on mouse over</desc>
-            <g transform="translate(2000,2000)">
-                <rect id="twelveMonthBox" class="twelveMonthZoom" x="6184" y="0" width="1428.99061033" height="4000">
-                    <animate attributeName="stroke-dashoffset" attributeType="CSS" from="0" to="400" begin="twelveMonthLinkGroup.mouseover" dur="1s" end="twelveMonthLinkGroup.mouseout" fill="freeze" repeatCount="indefinite" additive="sum"/>
-                </rect>
-            </g>
-            <text id="twelveMonthLink" class="changeViewLink" x="7500" y="1500">
-                View last twelve months
-                <set attributeType="CSS" attributeName="text-decoration" to="underline" begin="twelveMonthLinkGroup.mouseover" dur="0.1s" fill="freeze"/>
-                <set attributeType="CSS" attributeName="text-decoration" to="none" begin="twelveMonthLinkGroup.mouseout" dur="0.1s" fill="freeze"/>
-            </text>
-        </g>
-    
-        <g transform="translate(8184, 2000) scale(0.142899061033, 0.666666666667)">
-             <g id="twelveMonthChart">
-                <desc>Chart Area</desc>
-                <path class="axes" d="M 0 6000 v 100 M 833.3 6000 v 100 M 1667 6000 v 100 M 2500 6000 v 100 M 3333 6000 v 100 M 4167 6000 v 100 M 5000 6000 v 100 M 5833 6000 v 100 M 6667 6000 v 100 M 7500 6000 v 100 M 8333 6000 v 100 M 9167 6000 v 100 M 10000 6000 v 100 "/>
-                <path class="price" d=" M  0 5250 27.4 5055 54.79 5250 82.19 5100 164.4 5250 191.8 5100 219.2 5250 246.6 5550 274 5250 356.2 5250 383.6 5250 411 5250 438.4 5100 465.8 5100 547.9 4950 575.3 4800 602.7 4800 630.1 4800 657.5 4800 739.7 5100 767.1 5100 794.5 5550 821.9 5370 849.3 5550 931.5 5400 958.9 5100 986.3 5250 1014 5550 1041 5700 1151 5700 1178 5700 1205 5700 1233 5700 1315 5700 1342 5700 1370 5700 1397 5700 1425 5550 1507 5550 1534 5400 1562 5250 1589 5250 1616 5250 1699 5250 1726 5400 1753 5250 1781 5400 1808 5250 1890 5400 1918 5250 1945 5100 1973 4950 2000 5100 2082 4800 2110 4950 2137 4650 2164 4050 2192 3900 2274 3750 2301 3600 2329 3750 2356 3600 2384 3450 2466 3300 2493 3150 2521 3150 2548 2850 2575 2850 2658 2550 2685 2400 2712 2550 2740 2400 2767 2550 2849 2400 2877 2250 2904 2400 2932 3300 2959 3000 3041 3150 3068 3300 3096 3450 3123 3150 3151 3300 3233 3150 3260 3300 3288 3600 3315 2850 3342 3000 3425 3300 3452 3300 3479 3300 3507 3000 3534 3000 3616 3150 3644 3300 3671 3600 3699 3300 3726 3600 3808 4650 3836 4350 3863 4500 3890 4500 3918 4350 4000 4500 4027 4350 4055 4200 4082 4200 4110 4350 4192 4350 4219 4500 4247 4050 4274 4500 4301 4050 4384 3300 4411 3150 4438 3150 4466 3000 4493 3150 4575 3150 4603 3000 4630 2700 4658 2550 4685 2100 4767 2100 4795 1950 4822 1200 4849 1650 4877 1650 4959 1200 4986 1200 5014 1350 5041 1200 5068 1350 5151 1350 5178 1800 5205 1500 5233 1500 5260 1500 5342 1200 5370 1350 5397 1350 5425 1650 5452 1650 5534 1500 5562 1800 5589 1800 5616 1650 5644 1350 5726 1350 5753 1650 5781 1500 5808 1500 5836 1500 5918 1860 5945 1500 5973 1500 6000 1200 6027 750 6164 1500 6192 1650 6219 1800 6301 1800 6329 1800 6356 1800 6384 1800 6411 1950 6493 1800 6575 2100 6603 1950 6685 2250 6740 1800 6767 1800 6795 1800 6877 1500 6904 1500 6932 1800 6959 1650 6986 1650 7068 1650 7096 1950 7123 1800 7151 2100 7178 1950 7260 1950 7288 2100 7315 1950 7342 2100 7370 1950 7479 2100 7507 1650 7534 1500 7562 1200 7644 1350 7671 1500 7699 1650 7726 1950 7753 1950 7836 1650 7863 1650 7890 1500 7918 1800 7945 1650 8027 1800 8055 1800 8082 1500 8110 1350 8137 1350 8219 1500 8247 1350 8274 1200 8301 900 8521 900 8603 750 8630 750 8658 900 8685 900 8712 150 8795 300 8822 300 8849 0 8877 150 8904 0 8986 150 9014 150"/>
-                <text id="XLabels" class="xAxisLabels">
-                    <desc>X Axis Marker Labels for Twelve Month Chart</desc>
-                    <tspan x="0" y="6500">May 01</tspan><tspan x="2500" y="6500">Aug 01</tspan><tspan x="5000" y="6500">Nov 01</tspan><tspan x="7500" y="6500">Feb 02</tspan><tspan x="10000" y="6500">May 02</tspan>
-                </text>
-                <path class="axes" d="M 0 0 h -100 M 0 1500 h -100 M 0 3000 h -100 M 0 4500 h -100 M 0 6000 h -100 "/>
-                <text id="twelveMonthPriceLabels" class="priceLabels">
-                    <desc>Y Axis Marker Labels for fiveYearPrice</desc>
-                    <tspan x="-300" y="6000">  0.50</tspan><tspan x="-300" y="4500">  0.60</tspan><tspan x="-300" y="3000">  0.70</tspan><tspan x="-300" y="1500">  0.80</tspan><tspan x="-300" y="0">  0.90</tspan> 
-                </text>
-                
-                <animateTransform id="expandTwelveScale" attributeType="XML"
-                    attributeName="transform" type="scale"
-                    from="1 1" to="6.99794661191 1.5"
-                    begin="twelveMonthLinkGroup.click" dur="1s"
-                    fill="freeze" additive="replace"/>
-                <animateTransform id="expandTwelveTrans" attributeType="XML"
-                    attributeName="transform" type="translate"
-                    by="-6184 -0"
-                    begin="twelveMonthLinkGroup.click" dur="1s" 
-                    fill="freeze" additive="replace"/>
+		text.changeViewLink   { font-size:350 ; text-anchor:middle;}
+		g.fiveYearChart     {  }
+		g.twelveMonthChart     {  }
+		]]>
+	</style>
+	<script type="text/ecmascript">
+		<![CDATA[
+		function omoverTwelveMonthLinkGroup(evt)
+		{
+			if(svgDocument.getElementById('twelveMonthHighlights').getAttribute('visibility') == 'visible')
+			{
+				svgDocument.getElementById('twelveMonthLink').setAttribute('text-decoration','underline');
+				svgDocument.getElementById('twelveMonthBox').setAttribute('opacity',1);
+				svgDocument.getElementById('twelveMonthChart').setAttribute('opacity',1);
+			}
+		}
 
-                <set attributeType="CSS" attributeName="opacity" to="1" begin="fiveYearLink.click" dur="1s"/>
-                <animateTransform id="shrinkTwelveTrans" attributeType="XML"
-                    attributeName="transform" type="translate"
-                    from="1 1" to="6184, 0"
-                    begin="fiveYearLink.click" dur="1s"
-                    fill="freeze" additive="sum"/>
-                <animateTransform id="shrinkTwelveScale" attributeType="XML"
-                    attributeName="transform" type="scale"
-                    from="1 1" to="0.142899061033, 0.666666666667"
-                    begin="fiveYearLink.click" dur="1s" 
-                    fill="freeze" additive="sum"/>
-            </g>
-        </g>
-    </g>
-    
-    <text id="fiveYearLink" class="changeViewLink" x="7500" y="1500" onclick="viewFiveYearChart(evt)">
-        View Five Year Chart
-        <set attributeType="CSS" attributeName="text-decoration" to="underline" begin="fiveYearLink.mouseover" fill="freeze"/>
-        <set attributeType="CSS" attributeName="text-decoration" to="none" begin="fiveYearLink.mouseout" fill="freeze"/>
-    </text>
-    
-    <g>
-        <desc>Common Chart Elements</desc>
-        <text x="12000" y="500" style="font-size:200">23/04/02 03:43.53</text>
-        <use xlink:href="#chartTitle" x="7500" y="500"/>
-        <use xlink:href="#xAxisTitle" x="12000" y="8900"/>
-        <use xlink:href="#yAxisTitle" transform="translate(800,5000) rotate(-90)"/>
-        <path class="axes" d="M 2000,2000 v 6000 h 10000 "/>
-    </g>
-    
+		function omoutTwelveMonthLinkGroup(evt)
+		{
+			if(svgDocument.getElementById('twelveMonthHighlights').getAttribute('visibility') == 'visible')
+			{
+				svgDocument.getElementById('twelveMonthBox').setAttribute('opacity',0);
+				svgDocument.getElementById('twelveMonthChart').setAttribute('opacity',0);
+				svgDocument.getElementById('twelveMonthLink').setAttribute('text-decoration','none');
+			}
+		}
+
+		/*function omover12mChart()
+		{
+			if(svgDocument.getElementById('twelveMonthLink').getAttribute('visibility') == 'visible')
+			{
+				svgDocument.getElementById('twelveMonthBox').setAttribute('opacity',1);
+				svgDocument.getElementById('twelveMonthChart').setAttribute('opacity',1);
+			}
+		}
+
+		/*function oc12mChart()
+		{
+			if(svgDocument.getElementById('twelveMonthLink').getAttribute('visibility') == 'visible')
+				viewTwelveMonthChart('foo')
+		}*/
+
+		function viewTwelveMonthChart(evt)
+		{
+			svgDocument.getElementById('twelveMonthChart').setAttribute('opacity',1);
+			svgDocument.getElementById('twelveMonthHighlights').setAttribute('visibility','hidden');
+			svgDocument.getElementById('fiveYearLink').setAttribute('visibility','visible');
+		}
+
+		function viewFiveYearChart(evt)
+		{
+			svgDocument.getElementById('fiveYearLink').setAttribute("visibility","hidden");
+			svgDocument.getElementById('twelveMonthHighlights').setAttribute('visibility','visible');
+
+		}
+		// ]]>
+	</script>
+	<defs>
+		<g id="chartTitle">
+			<desc>Chart Title</desc>
+			<text class="chartTitle" x="0" y="500">Downer Edi Limited</text>
+		</g>
+		<g id="legend">
+			<name>Legend</name>
+			<g style="fill:gray; stroke:black; stroke-width:0" shape-rendering="crispEdges">
+				<rect x="100" y="100" width="12000" height="500"/>
+			</g>
+			<g style="fill:white; stroke:black; stroke-width:6" shape-rendering="crispEdges">
+				<rect x="0" y="0" width="12000" height="500"/>
+			</g>
+			<g>
+				<path class="price" d="M 300 300 h 500"/>
+				<text x="1000" y="400" class="legendText">DOW Price</text>
+				<path class="movingAverage" d="M 3300 300 h 500"/>
+				<text x="4000" y="400" class="legendText">Moving Average</text>
+				<path class="eps" d="M 6800 300 h 500"/>
+				<text x="7500" y="400" class="legendText">EPS</text>
+				<path class="epsfc" d="M 9300 300 h 500"/>
+				<text x="10000" y="400" class="legendText">EPS Forecast</text>
+			</g>
+		</g>
+
+		<g id="xAxisTitle">
+			<desc>X Axis Title</desc>
+			<text x="0" y="0" class="xAxisTitle">Date</text>
+		</g>
+		<g id="yAxisTitle">
+			<desc>Y Axis Title</desc>
+			<text x="0" y="0" class="yAxisTitle">Price ($)</text>
+		</g>
+		<marker id="epsMarker" markerWidth="10" markerHeight="10" refX="5" refY="5">
+			<circle class="epsMarker" cx="5" cy="5" r="4"/>
+		</marker>
+		<marker id="epsfcMarker" markerWidth="10" markerHeight="10" refX="5" refY="5">
+			<circle class="epsfcMarker" cx="5" cy="5" r="4"/>
+		</marker>
+	</defs>
+
+
+	<g>
+		<desc>Border Box</desc>
+		<rect x="0" y="0" width="14000" height="10000" style="fill:white; stroke:black; stroke-width:15" shape-rendering="crispEdges"/>
+	</g>
+
+	<g id="debug" transform="translate(2100,1900)">
+		<desc>Some numbers for debug purposes</desc>
+		<text style="font-size:200;fill:grey"><tspan x="0" y="250">start of model script</tspan></text>
+	</g>
+	<g id="fiveYearChart" class="fiveYearChart">
+		<desc>This is the five Year chart</desc>
+
+		<use xlink:href="#legend" x="1000" y="9000"/>
+
+		<g transform="translate(2000,2000)">
+			<desc>Chart Area</desc>
+			<path class="epsfc" d=" M  6416 5900 7735 5500 9163 4300"/>
+			<path class="eps" d=" M  2132 600 3560 4300 4992 5100 6416 5900"/>
+			<path class="movingAverage" d=" M  348.2 4958 465.6 4936 582.9 4881 704.2 4850 825.5 4775 939 4705 1064 4646 1185 4704 1776 4669 1894 4681 2132 4563 2254 4463 2375 4404 2492 4388 2610 4429 3204 3871 3322 3804 3443 3742 3560 3731 3678 3792 3803 3823 3920 3881 4034 3912 4515 4119 4636 4096 4746 4138 4875 4169 4992 3969 5113 3938 5235 3877 5348 3815 5473 3735 5591 3688 6060 3485 6182 3538 6303 3464 6416 3395 6541 3433 6663 3341 6772 3318"/>
+			<path class="price" d=" M  348.2 4800 465.6 4800 582.9 4500 704.2 4600 825.5 4100 939 4000 1064 4000 1185 5400 1776 4800 1894 4950 2132 3200 2254 3400 2375 3400 2492 3800 2610 4500 3204 4000 3322 4000 3443 4200 3560 3600 3678 4000 3803 3800 3920 4150 4034 4200 4515 4500 4636 2900 4746 4550 4875 4400 4992 1600 5113 3200 5235 3200 5348 3000 5473 3100 5591 3600 6060 4800 6182 3600 6303 3580 6416 3500 6541 2100 6663 2000 6772 2900 6948 3000 6956 900 6960 1100 6964 1100 6968 1100 6972 1100 6976 1100 6980 1200 6984 1200 6987 1100 6991 900 6995 900 6999 900 7003 900 7007 1000 7011 1000 7015 1000 7019 1200 7023 1200 7027 1200 7031 1100 7034 1000 7038 1100 7042 800 7046 500 7050 500 7054 500 7058 500 7062 500 7066 1000 7070 1100 7074 1100 7077 1200 7081 1200 7085 1200 7089 1200 7093 1200 7097 1200 7109 1200 7113 1200 7117 1200 7121 1200 7124 1200 7128 1300 7132 1300 7136 1300 7140 1500 7148 1200 7152 1200 7156 1200 7160 1200 7164 1200 7167 1200 7171 1000 7175 1200 7179 1200 7183 1200 7187 1200 7191 1200 7195 1100 7199 1300 7203 1200 7207 1400 7210 1300 7214 1300 7218 1300 7222 1300 7226 1400 7230 1300 7234 1400 7238 1400 7242 1400 7246 1400 7250 1400 7254 1400 7257 1100 7261 1000 7359 1000 7363 900 7367 800 7371 600 7375 700 7379 700 7383 700 7387 600 7390 600 7394 600 7398 600 7402 600 7406 600 7410 600 7414 500 7418 500 7422 600 7426 600 7430 100 7433 100 7437 100 7441 200 7445 200 7449 0 7453 100 7457 0 7461 0 7469 100 7473 100 7477 100 7559 1300"/>
+
+			<path class="axes" d="M 0 6000 v 100 M 1429 6000 v 100 M 2857 6000 v 100 M 4286 6000 v 100 M 5714 6000 v 100 M 7143 6000 v 100 M 8571 6000 v 100 M 10000 6000 v 100 "/>
+			<text id="XLabels" class="xAxisLabels">
+				<desc>X Axis Marker Labels for Five Year Chart</desc>
+				<tspan x="0" y="6500">1997</tspan><tspan x="1429" y="6500">1998</tspan><tspan x="2857" y="6500">1999</tspan><tspan x="4286" y="6500">2000</tspan><tspan x="5714" y="6500">2001</tspan><tspan x="7143" y="6500">2002</tspan><tspan x="8571" y="6500">2003</tspan><tspan x="10000" y="6500">2004</tspan>
+			</text>
+			<path class="axes" d="M 0 0 h -100 M 0 1000 h -100 M 0 2000 h -100 M 0 3000 h -100 M 0 4000 h -100 M 0 5000 h -100 "/>
+			<text id="YLabels" class="priceLabels">
+				<desc>Y Axis Marker Labels for fiveYearPrice</desc>
+				<tspan x="-300" y="6000">  0.30</tspan><tspan x="-300" y="5000">  0.40</tspan><tspan x="-300" y="4000">  0.50</tspan><tspan x="-300" y="3000">  0.60</tspan><tspan x="-300" y="2000">  0.70</tspan><tspan x="-300" y="1000">  0.80</tspan>
+			</text>
+			<path class="axes" d="M 10000 0 v 6000"/>
+			<path class="axes" d="M 10000 0 h 100 M 10000 1000 h 100 M 10000 2000 h 100 M 10000 3000 h 100 M 10000 4000 h 100 M 10000 5000 h 100 M 10000 6000 h 100 "/>
+			<text id="EPSLabels" class="EPSLabels">
+				<desc>Y Axis Marker Labels for eps</desc>
+				<tspan x="10300" y="6000">  0.06</tspan><tspan x="10300" y="5000">  0.07</tspan><tspan x="10300" y="4000">  0.08</tspan><tspan x="10300" y="3000">  0.09</tspan><tspan x="10300" y="2000">  0.10</tspan><tspan x="10300" y="1000">  0.11</tspan><tspan x="10300" y="0">  0.12</tspan>
+			</text>
+			<animate id="fadeOutFiveYear" attributeType="CSS" attributeName="opacity"
+				from="1" to="0" begin="twelveMonthLinkGroup.click" dur="1s" fill="freeze"/>
+			<animate id="fadeInFiveYear" attributeType="CSS" attributeName="opacity"
+				from="0" to="1" begin="fiveYearLink.click" dur="1s" fill="freeze"/>
+		</g>
+	</g>
+
+	<g id="twelveMonthLinkGroup" onmouseover="omoverTwelveMonthLinkGroup(evt)" onmouseout="omoutTwelveMonthLinkGroup(evt)" onclick="viewTwelveMonthChart(evt)">
+		<g id="twelveMonthHighlights">
+			<desc>The Twelve Month Highlights: the box and text link that change on mouse over</desc>
+			<g transform="translate(2000,2000)">
+				<rect id="twelveMonthBox" class="twelveMonthZoom" x="6184" y="0" width="1428.99061033" height="4000">
+					<animate attributeName="stroke-dashoffset" attributeType="CSS" from="0" to="400" begin="twelveMonthLinkGroup.mouseover" dur="1s" end="twelveMonthLinkGroup.mouseout" fill="freeze" repeatCount="indefinite" additive="sum"/>
+				</rect>
+			</g>
+			<text id="twelveMonthLink" class="changeViewLink" x="7500" y="1500">
+				View last twelve months
+				<set attributeType="CSS" attributeName="text-decoration" to="underline" begin="twelveMonthLinkGroup.mouseover" dur="0.1s" fill="freeze"/>
+				<set attributeType="CSS" attributeName="text-decoration" to="none" begin="twelveMonthLinkGroup.mouseout" dur="0.1s" fill="freeze"/>
+			</text>
+		</g>
+
+		<g transform="translate(8184, 2000) scale(0.142899061033, 0.666666666667)">
+			 <g id="twelveMonthChart">
+				<desc>Chart Area</desc>
+				<path class="axes" d="M 0 6000 v 100 M 833.3 6000 v 100 M 1667 6000 v 100 M 2500 6000 v 100 M 3333 6000 v 100 M 4167 6000 v 100 M 5000 6000 v 100 M 5833 6000 v 100 M 6667 6000 v 100 M 7500 6000 v 100 M 8333 6000 v 100 M 9167 6000 v 100 M 10000 6000 v 100 "/>
+				<path class="price" d=" M  0 5250 27.4 5055 54.79 5250 82.19 5100 164.4 5250 191.8 5100 219.2 5250 246.6 5550 274 5250 356.2 5250 383.6 5250 411 5250 438.4 5100 465.8 5100 547.9 4950 575.3 4800 602.7 4800 630.1 4800 657.5 4800 739.7 5100 767.1 5100 794.5 5550 821.9 5370 849.3 5550 931.5 5400 958.9 5100 986.3 5250 1014 5550 1041 5700 1151 5700 1178 5700 1205 5700 1233 5700 1315 5700 1342 5700 1370 5700 1397 5700 1425 5550 1507 5550 1534 5400 1562 5250 1589 5250 1616 5250 1699 5250 1726 5400 1753 5250 1781 5400 1808 5250 1890 5400 1918 5250 1945 5100 1973 4950 2000 5100 2082 4800 2110 4950 2137 4650 2164 4050 2192 3900 2274 3750 2301 3600 2329 3750 2356 3600 2384 3450 2466 3300 2493 3150 2521 3150 2548 2850 2575 2850 2658 2550 2685 2400 2712 2550 2740 2400 2767 2550 2849 2400 2877 2250 2904 2400 2932 3300 2959 3000 3041 3150 3068 3300 3096 3450 3123 3150 3151 3300 3233 3150 3260 3300 3288 3600 3315 2850 3342 3000 3425 3300 3452 3300 3479 3300 3507 3000 3534 3000 3616 3150 3644 3300 3671 3600 3699 3300 3726 3600 3808 4650 3836 4350 3863 4500 3890 4500 3918 4350 4000 4500 4027 4350 4055 4200 4082 4200 4110 4350 4192 4350 4219 4500 4247 4050 4274 4500 4301 4050 4384 3300 4411 3150 4438 3150 4466 3000 4493 3150 4575 3150 4603 3000 4630 2700 4658 2550 4685 2100 4767 2100 4795 1950 4822 1200 4849 1650 4877 1650 4959 1200 4986 1200 5014 1350 5041 1200 5068 1350 5151 1350 5178 1800 5205 1500 5233 1500 5260 1500 5342 1200 5370 1350 5397 1350 5425 1650 5452 1650 5534 1500 5562 1800 5589 1800 5616 1650 5644 1350 5726 1350 5753 1650 5781 1500 5808 1500 5836 1500 5918 1860 5945 1500 5973 1500 6000 1200 6027 750 6164 1500 6192 1650 6219 1800 6301 1800 6329 1800 6356 1800 6384 1800 6411 1950 6493 1800 6575 2100 6603 1950 6685 2250 6740 1800 6767 1800 6795 1800 6877 1500 6904 1500 6932 1800 6959 1650 6986 1650 7068 1650 7096 1950 7123 1800 7151 2100 7178 1950 7260 1950 7288 2100 7315 1950 7342 2100 7370 1950 7479 2100 7507 1650 7534 1500 7562 1200 7644 1350 7671 1500 7699 1650 7726 1950 7753 1950 7836 1650 7863 1650 7890 1500 7918 1800 7945 1650 8027 1800 8055 1800 8082 1500 8110 1350 8137 1350 8219 1500 8247 1350 8274 1200 8301 900 8521 900 8603 750 8630 750 8658 900 8685 900 8712 150 8795 300 8822 300 8849 0 8877 150 8904 0 8986 150 9014 150"/>
+				<text id="XLabels" class="xAxisLabels">
+					<desc>X Axis Marker Labels for Twelve Month Chart</desc>
+					<tspan x="0" y="6500">May 01</tspan><tspan x="2500" y="6500">Aug 01</tspan><tspan x="5000" y="6500">Nov 01</tspan><tspan x="7500" y="6500">Feb 02</tspan><tspan x="10000" y="6500">May 02</tspan>
+				</text>
+				<path class="axes" d="M 0 0 h -100 M 0 1500 h -100 M 0 3000 h -100 M 0 4500 h -100 M 0 6000 h -100 "/>
+				<text id="twelveMonthPriceLabels" class="priceLabels">
+					<desc>Y Axis Marker Labels for fiveYearPrice</desc>
+					<tspan x="-300" y="6000">  0.50</tspan><tspan x="-300" y="4500">  0.60</tspan><tspan x="-300" y="3000">  0.70</tspan><tspan x="-300" y="1500">  0.80</tspan><tspan x="-300" y="0">  0.90</tspan>
+				</text>
+
+				<animateTransform id="expandTwelveScale" attributeType="XML"
+					attributeName="transform" type="scale"
+					from="1 1" to="6.99794661191 1.5"
+					begin="twelveMonthLinkGroup.click" dur="1s"
+					fill="freeze" additive="replace"/>
+				<animateTransform id="expandTwelveTrans" attributeType="XML"
+					attributeName="transform" type="translate"
+					by="-6184 -0"
+					begin="twelveMonthLinkGroup.click" dur="1s"
+					fill="freeze" additive="replace"/>
+
+				<set attributeType="CSS" attributeName="opacity" to="1" begin="fiveYearLink.click" dur="1s"/>
+				<animateTransform id="shrinkTwelveTrans" attributeType="XML"
+					attributeName="transform" type="translate"
+					from="1 1" to="6184, 0"
+					begin="fiveYearLink.click" dur="1s"
+					fill="freeze" additive="sum"/>
+				<animateTransform id="shrinkTwelveScale" attributeType="XML"
+					attributeName="transform" type="scale"
+					from="1 1" to="0.142899061033, 0.666666666667"
+					begin="fiveYearLink.click" dur="1s"
+					fill="freeze" additive="sum"/>
+			</g>
+		</g>
+	</g>
+
+	<text id="fiveYearLink" class="changeViewLink" x="7500" y="1500" onclick="viewFiveYearChart(evt)">
+		View Five Year Chart
+		<set attributeType="CSS" attributeName="text-decoration" to="underline" begin="fiveYearLink.mouseover" fill="freeze"/>
+		<set attributeType="CSS" attributeName="text-decoration" to="none" begin="fiveYearLink.mouseout" fill="freeze"/>
+	</text>
+
+	<g>
+		<desc>Common Chart Elements</desc>
+		<text x="12000" y="500" style="font-size:200">23/04/02 03:43.53</text>
+		<use xlink:href="#chartTitle" x="7500" y="500"/>
+		<use xlink:href="#xAxisTitle" x="12000" y="8900"/>
+		<use xlink:href="#yAxisTitle" transform="translate(800,5000) rotate(-90)"/>
+		<path class="axes" d="M 2000,2000 v 6000 h 10000 "/>
+	</g>
+
 </svg>
