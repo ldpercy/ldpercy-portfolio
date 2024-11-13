@@ -1,6 +1,7 @@
-<svg width="600px" height="400px" viewBox="0 0 15001 10001" onload="viewFiveYearChart('foo');omoutTwelveMonthLinkGroup('bar');" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMin meet" zoomAndPan="magnify">
+<svg width="100%" height="100%" viewBox="0 0 14001 10001" onload="viewFiveYearChart('foo');omoutTwelveMonthLinkGroup('bar');" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" zoomAndPan="magnify">
 	<style type="text/css">
 		<![CDATA[
+		text { font-family: sans-serif; }
 		text.chartTitle { fill:navy; font-size:400; text-anchor:middle; }
 		path.price          { stroke:red ; stroke-width:50; stroke-linejoin:round; stroke-linecap:round; fill:none; }
 		path.movingAverage  { stroke:lime ; stroke-width:25; stroke-linejoin:round; stroke-linecap:round; fill:none; }
@@ -78,7 +79,7 @@
 	<defs>
 		<g id="chartTitle">
 			<desc>Chart Title</desc>
-			<text class="chartTitle" x="0" y="500">Aust And Nz Banking Group Lt</text>
+			<text class="chartTitle" x="0" y="500" font-size="400">Aust And Nz Banking Group Lt</text>
 		</g>
 		<g id="legend">
 			<name>Legend</name>

@@ -4,6 +4,7 @@
 		@media screen   {   text.changeViewLink { font-size:350 ; text-anchor:middle; fill:blue ; text-decoration:underline; }  }
 		@media print    {   text.changeViewLink { fill:none; }    }
 		svg.main            { height:100% ; width:100%; }
+		text { font-family: sans-serif; }
 		text.chartTitle     { fill:#342d62; font-size:400; text-anchor:start; font-family:verdana,sans-serif; font-variant:small-caps; font-weight:bold; }
 		path.gridLine       { stroke:grey; stroke-width:10; stroke-dasharray:100,100 ; fill:none }
 		path.price          { stroke:red; stroke-width:50; stroke-linejoin:round; stroke-linecap:round; fill:none; }
@@ -54,7 +55,7 @@
 
 		<g id="chartTitle">
 			<desc>Chart Title</desc>
-			<text class="chartTitle" x="0" y="500">John Fairfax Holdings Ltd</text>
+			<text class="chartTitle" x="0" y="500" font-size="400">John Fairfax Holdings Ltd</text>
 		</g>
 		<g id="legend">
 			<name>Legend</name>
