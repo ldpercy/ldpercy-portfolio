@@ -2,6 +2,7 @@
 
 	<style type="text/css"><![CDATA[
 		svg.main            { height:100% ; width:100%; }
+		text { font-family: sans-serif; }
 		text.chartTitle     { fill:#342d62; font-size:400; text-anchor:start; font-family:verdana,sans-serif; font-variant:small-caps; font-weight:bold; }
 		path.gridLine       { stroke:grey; stroke-width:10; stroke-dasharray:100,100 ; fill:none }
 		path.price          { stroke:red; stroke-width:50; stroke-linejoin:round; stroke-linecap:round; fill:none; }
@@ -51,7 +52,7 @@
 		<g id="legend">
 			<name>Legend</name>
 			<rect x="0" y="0" width="12000" height="600" style="fill:white; stroke:grey" shape-rendering="crispEdges"/>
-			<text class="legendText">
+			<text class="legendText" font-size="250">
 				<tspan x="1000" y="400">DOW Price</tspan>
 				<tspan x="3500" y="400">12 Month Moving Average</tspan>
 				<tspan x="8000" y="400">EPS</tspan>
@@ -97,18 +98,18 @@
 			<path class="price" d="M 348.2 4971 465.6 4971 582.9 4714 704.2 4800 825.5 4371 939 4286 1064 4286 1185 5486 1776 4971 1894 5100 2132 3600 2254 3771 2375 3771 2492 4114 2610 4714 3204 4286 3322 4286 3443 4457 3560 3943 3678 4286 3803 4114 3920 4414 4034 4457 4515 4714 4636 3343 4746 4757 4875 4629 4992 2229 5113 3600 5235 3600 5348 3429 5473 3514 5591 3943 6060 4971 6182 3943 6303 3926 6416 3857 6541 2657 6663 2571 6772 3343 6948 3429 6956 1629 6960 1800 6964 1800 6968 1800 6972 1800 6976 1800 6980 1886 6984 1886 6987 1800 6991 1629 6995 1629 6999 1629 7003 1629 7007 1714 7011 1714 7015 1714 7019 1886 7023 1886 7027 1886 7031 1800 7034 1714 7038 1800 7042 1543 7046 1286 7050 1286 7054 1286 7058 1286 7062 1286 7066 1714 7070 1800 7074 1800 7077 1886 7081 1886 7085 1886 7089 1886 7093 1886 7097 1886 7109 1886 7113 1886 7117 1886 7121 1886 7124 1886 7128 1971 7132 1971 7136 1971 7140 2143 7148 1886 7152 1886 7156 1886 7160 1886 7164 1886 7167 1886 7171 1714 7175 1886 7179 1886 7183 1886 7187 1886 7191 1886 7195 1800 7199 1971 7203 1886 7207 2057 7210 1971 7214 1971 7218 1971 7222 1971 7226 2057 7230 1971 7234 2057 7238 2057 7242 2057 7246 2057 7250 2057 7254 2057 7257 1800 7261 1714 7359 1714 7363 1629 7367 1543 7371 1371 7375 1457 7379 1457 7383 1457 7387 1371 7390 1371 7394 1371 7398 1371 7402 1371 7406 1371 7410 1371 7414 1286 7418 1286 7422 1371 7426 1371 7430 942.9 7433 942.9 7437 942.9 7441 1029 7445 1029 7449 857.1 7453 942.9 7457 857.1 7461 857.1 7469 942.9 7473 942.9 7477 942.9 7559 1971 7743 1800 7746 1800 7750 1800 7754 1800 7774 1800 7778 1800 7782 1800 7786 1800 7797 1800 7801 1800 7813 1800 7825 2743 7829 3086"/>
 
 			<path class="axes" d="M 0 6000 v 100 M 1429 6000 v 100 M 2857 6000 v 100 M 4286 6000 v 100 M 5714 6000 v 100 M 7143 6000 v 100 M 8571 6000 v 100 M 10000 6000 v 100 "/>
-			<text id="XLabels" class="xAxisLabels">
+			<text id="XLabels" class="xAxisLabels" font-size="300">
 				<desc>X Axis Marker Labels for Five Year Chart</desc>
 				<tspan x="0" y="6500">1997</tspan><tspan x="1429" y="6500">1998</tspan><tspan x="2857" y="6500">1999</tspan><tspan x="4286" y="6500">2000</tspan><tspan x="5714" y="6500">2001</tspan><tspan x="7143" y="6500">2002</tspan><tspan x="8571" y="6500">2003</tspan><tspan x="10000" y="6500">2004</tspan>
 			</text>
 			<path class="axes" d="M 0 0 h -100 M 0 857.1 h -100 M 0 1714 h -100 M 0 2571 h -100 M 0 3429 h -100 M 0 4286 h -100 M 0 5143 h -100 "/>
-			<text id="YLabels" class="priceLabels">
+			<text id="YLabels" class="priceLabels" font-size="300">
 				<desc>Y Axis Marker Labels for fiveYearPrice</desc>
 				<tspan x="-300" y="6000">  0.30</tspan><tspan x="-300" y="5143">  0.40</tspan><tspan x="-300" y="4286">  0.50</tspan><tspan x="-300" y="3429">  0.60</tspan><tspan x="-300" y="2571">  0.70</tspan><tspan x="-300" y="1714">  0.80</tspan><tspan x="-300" y="857.1">  0.90</tspan>
 			</text>
 			<path class="axes" d="M 10000 0 v 6000"/>
 			<path class="axes" d="M 10000 0 h 100 M 10000 857.1 h 100 M 10000 1714 h 100 M 10000 2571 h 100 M 10000 3429 h 100 M 10000 4286 h 100 M 10000 5143 h 100 M 10000 6000 h 100 "/>
-			<text id="EPSLabels" class="EPSLabels">
+			<text id="EPSLabels" class="EPSLabels" font-size="300">
 				<desc>Y Axis Marker Labels for eps</desc>
 				<tspan x="10300" y="6000">  0.05</tspan><tspan x="10300" y="5143">  0.06</tspan><tspan x="10300" y="4286">  0.07</tspan><tspan x="10300" y="3429">  0.08</tspan><tspan x="10300" y="2571">  0.09</tspan><tspan x="10300" y="1714">  0.10</tspan><tspan x="10300" y="857.1">  0.11</tspan><tspan x="10300" y="0">  0.12</tspan>
 			</text>
