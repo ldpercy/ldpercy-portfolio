@@ -19,7 +19,9 @@
 		rect.twelveMonthZoom      { fill:whitesmoke ; fill-opacity:0.9 ; stroke-width:20 ; stroke:none ; stroke-linejoin:round ; stroke-dasharray:500 500 }
 		.hide           { stroke:none ; fill:white ; fill-opacity:0 }
 
-		text.changeViewLink   { font-size:350 ; text-anchor:middle; fill:blue ; text-decoration:underline }
+		@media screen   {   text.changeViewLink { font-size:350px; text-anchor:middle; fill:blue; text-decoration:underline; cursor:pointer; }  }
+		@media print    {   text.changeViewLink { fill:none; }    }
+
 		g.fiveYearChart     {  }
 		g.twelveMonthChart     {  }
 		]]>
@@ -110,7 +112,7 @@
 
 		<g id="chartTitle">
 			<desc>Chart Title</desc>
-			<text class="chartTitle" x="0" y="500" font-size="400">Bhp Billiton Ltd</text>
+			<text class="chartTitle" font-size="400" x="0" y="500">Bhp Billiton Ltd</text>
 		</g>
 		<g id="legend">
 			<desc>Legend</desc>
@@ -198,7 +200,7 @@
 
 				</rect>
 			</g>
-			<text id="twelveMonthLink" class="changeViewLink" x="7500" y="1800">
+			<text id="twelveMonthLink" class="changeViewLink" font-size="350" x="7500" y="1800">
 				View last twelve months
 
 			</text>
@@ -245,16 +247,9 @@
 		</g>
 	</g>
 
-	<!--
-	<text id="fiveYearLink" class="changeViewLink" x="7500" y="1800" onclick="viewFiveYearChart(evt)">
-		View Five Year Chart
-
-	</text>
-	-->
 	<a id="fiveYearLink" onclick="viewFiveYearChart(evt)">
-		<text class="changeViewLink" x="7500" y="1800">View Five Year Chart</text>
+		<text class="changeViewLink" font-size="350" x="7500" y="1800">View Five Year Chart</text>
 	</a>
-
 
 	<g style="display:none">
 		<set id="twelveMonthTrigger" begin="undefined"/>
@@ -264,7 +259,7 @@
 
 	<g>
 		<desc>Common Chart Elements</desc>
-		<text x="12000" y="500" style="font-size:200">02/05/02 06:22.06</text>
+		<text x="12000" y="500" font-size="200">02/05/02 06:22.06</text>
 		<use xlink:href="#chartTitle" x="7500" y="500"/>
 		<use xlink:href="#xAxisTitle" x="12000" y="8900" style="display:none"/>
 		<use xlink:href="#yAxisPriceTitle" x="1500" y="1500"/>

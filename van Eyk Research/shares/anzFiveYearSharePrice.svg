@@ -172,7 +172,7 @@
 
 				</rect>
 			</g>
-			<text id="twelveMonthLink" class="changeViewLink" x="7500" y="1500">
+			<text id="twelveMonthLink" class="changeViewLink" font-size="350" x="7500" y="1500">
 				View last twelve months
 				<set attributeType="CSS" attributeName="text-decoration" to="underline" begin="twelveMonthLinkGroup.mouseover" dur="0.1s" fill="freeze"/>
 				<set attributeType="CSS" attributeName="text-decoration" to="none" begin="twelveMonthLinkGroup.mouseout" dur="0.1s" fill="freeze"/>
@@ -220,7 +220,7 @@
 		</g>
 	</g>
 
-	<text id="fiveYearLink" class="changeViewLink" x="7500" y="1500" onclick="viewFiveYearChart(evt)">
+	<text id="fiveYearLink" class="changeViewLink" font-size="350" x="7500" y="1500" onclick="viewFiveYearChart(evt)">
 		View Five Year Chart
 		<set attributeType="CSS" attributeName="text-decoration" to="underline" begin="fiveYearLink.mouseover" fill="freeze"/>
 		<set attributeType="CSS" attributeName="text-decoration" to="none" begin="fiveYearLink.mouseout" fill="freeze"/>
