@@ -4,7 +4,7 @@
 	<style type="text/css">
 		<![CDATA[
 		text { font-family: sans-serif; }
-		text.chartTitle { fill:navy; font-size:400; text-anchor:middle; }
+		text.chartTitle { fill:#342d62; font-size:400; text-anchor:middle; font-family:verdana,sans-serif; font-variant:small-caps; font-weight:bold; }
 		path.price          { stroke:red ; stroke-width:50; stroke-linejoin:round; stroke-linecap:round; fill:none; }
 		path.movingAverage  { stroke:lime ; stroke-width:25; stroke-linejoin:round; stroke-linecap:round; fill:none; }
 		path.eps            { stroke:blue ; marker:url(#epsMarker); fill:none; stroke-dasharray:50,50 ; stroke-width:25 }
@@ -12,10 +12,10 @@
 		text.xAxisLabels    { font-size:300; text-anchor:middle; }
 		text.priceLabels    { font-size:300; text-anchor:end; baseline-shift:-30% }
 		text.EPSLabels      { font-size:300; text-anchor:start; baseline-shift:-30% }
-		text.xAxisTitle     { fill:teal; font-size:400; text-anchor:middle; }
-		text.yAxisTitle     { fill:teal; font-size:400; text-anchor:middle; }
+		text.xAxisTitle     { fill:grey; font-size:250; text-anchor:middle; }
+		text.yAxisTitle     { fill:grey; font-size:250; text-anchor:middle; }
 		path.axes           { fill:none; stroke:black; stroke-width:50 ; shape-rendering:crispEdges }
-		text.legendText     { fill:navy; font-size:300; }
+		text.legendText     { fill:#342d62; font-size:300; }
 		circle.epsMarker    { fill:blue ; stroke:darkblue }
 		circle.epsfcMarker  { fill:green ; stroke:darkgreen }
 		rect.twelveMonthZoom      { fill:whitesmoke ; fill-opacity:0.9 ; stroke-width:20 ; stroke:none ; stroke-linejoin:round ; stroke-dasharray:500 500 }
@@ -29,8 +29,8 @@
 	<script type="text/ecmascript">
 		<![CDATA[
 
-		var newMenuRoot = parseXML( printNode( document.getElementById( 'NewMenu' ) ), contextMenu );
-		contextMenu.replaceChild( newMenuRoot, contextMenu.firstChild );
+		//var newMenuRoot = parseXML( printNode( document.getElementById( 'NewMenu' ) ), contextMenu );
+		//contextMenu.replaceChild( newMenuRoot, contextMenu.firstChild );
 
 
 		function omoverTwelveMonthLinkGroup(evt)
@@ -122,7 +122,7 @@
 
 		<g id="chartTitle">
 			<desc>Chart Title</desc>
-			<text x="0" y="500" startOffset="0" class="chartTitle" font-size="400">Aust And Nz Banking Group Lt</text>
+			<text x="0" y="500" startOffset="0" class="chartTitle" font-size="400">Aust And Nz Banking Group Ltd</text>
 		</g>
 		<g id="legend">
 			<name>Legend</name>
@@ -144,13 +144,15 @@
 			</g>
 		</g>
 
+		<!--
 		<g id="xAxisTitle">
 			<desc>X Axis Title</desc>
 			<text x="0" y="0" startOffset="0" class="xAxisTitle">Date</text>
 		</g>
+		-->
 		<g id="yAxisTitle">
 			<desc>Y Axis Title</desc>
-			<text x="0" y="0" startOffset="0" class="yAxisTitle">Price ($)</text>
+			<text x="0" y="0" startOffset="0" class="yAxisTitle" font-size="250">Price ($)</text>
 		</g>
 		<marker id="epsMarker" markerWidth="10" markerHeight="10" refX="5" refY="5" preserveAspectRatio="xMidYMid meet">
 			<circle cx="5" cy="5" r="4" class="epsMarker"/>

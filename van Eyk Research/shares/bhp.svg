@@ -2,7 +2,7 @@
 	<style type="text/css">
 		<![CDATA[
 		text { font-family: sans-serif; }
-		text.chartTitle     { fill:black; font-size:400; text-anchor:middle; }
+		text.chartTitle     { fill:#342d62; font-size:400; text-anchor:middle; font-family:verdana,sans-serif; font-variant:small-caps; font-weight:bold; }
 		path.price          { stroke:red ; stroke-width:50; stroke-linejoin:round; stroke-linecap:round; fill:none; }
 		path.movingAverage  { stroke:grey ; stroke-width:25; stroke-linejoin:round; stroke-linecap:round; fill:none; }
 		path.eps            { stroke:blue ; marker:url(#epsMarker); fill:none; stroke-dasharray:50,50 ; stroke-width:25 }
@@ -13,7 +13,7 @@
 		text.xAxisTitle     { fill:grey; font-size:250; text-anchor:middle; }
 		text.yAxisTitle     { fill:grey; font-size:250; text-anchor:middle; }
 		path.axes           { fill:none; stroke:black; stroke-width:25 ; shape-rendering:crispEdges }
-		text.legendText     { fill:navy; font-size:250; }
+		text.legendText     { fill:#342d62; font-size:250; }
 		circle.epsMarker    { fill:blue ; stroke:darkblue }
 		circle.epsfcMarker  { fill:green ; stroke:darkgreen }
 		rect.twelveMonthZoom      { fill:whitesmoke ; fill-opacity:0.9 ; stroke-width:20 ; stroke:none ; stroke-linejoin:round ; stroke-dasharray:500 500 }
@@ -27,8 +27,8 @@
 	<script type="text/ecmascript">
 		<![CDATA[
 
-		var newMenuRoot = parseXML( printNode( document.getElementById( 'NewMenu' ) ), contextMenu );
-		contextMenu.replaceChild( newMenuRoot, contextMenu.firstChild );
+		//var newMenuRoot = parseXML( printNode( document.getElementById( 'NewMenu' ) ), contextMenu );
+		//contextMenu.replaceChild( newMenuRoot, contextMenu.firstChild );
 
 
 		function omoverTwelveMonthLinkGroup(evt)
@@ -53,6 +53,7 @@
 
 		function firstLoad()
 		{
+			if (typeof svgDocument == 'undefined') { svgDocument = document; }
 			svgDocument.getElementById('fiveYearLink').setAttribute("visibility","hidden");
 			svgDocument.getElementById('twelveMonthHighlights').setAttribute('visibility','visible');
 			currentView = 'fiveYear';
@@ -126,17 +127,19 @@
 			<path class="epsfc" d="M 9300 300 h 500"/>
 		</g>
 
+		<!--
 		<g id="xAxisTitle">
 			<desc>X Axis Title</desc>
 			<text class="xAxisTitle">Date</text>
 		</g>
+		-->
 		<g id="yAxisPriceTitle">
 			<desc>Y Axis Title</desc>
-			<text class="yAxisTitle">Price ($)</text>
+			<text class="yAxisTitle" font-size="250">Price ($)</text>
 		</g>
 		<g id="yAxisEPSTitle">
 			<desc>Y Axis Title</desc>
-			<text class="yAxisTitle">EPS ($)</text>
+			<text class="yAxisTitle" font-size="250">EPS ($)</text>
 		</g>
 		<marker id="epsMarker" markerWidth="10" markerHeight="10" refX="5" refY="5">
 			<circle class="epsMarker" cx="5" cy="5" r="4"/>
@@ -242,15 +245,22 @@
 		</g>
 	</g>
 
+	<!--
 	<text id="fiveYearLink" class="changeViewLink" x="7500" y="1800" onclick="viewFiveYearChart(evt)">
 		View Five Year Chart
 
 	</text>
+	-->
+	<a id="fiveYearLink" onclick="viewFiveYearChart(evt)">
+		<text class="changeViewLink" x="7500" y="1800">View Five Year Chart</text>
+	</a>
+
 
 	<g style="display:none">
 		<set id="twelveMonthTrigger" begin="undefined"/>
 		<set id="fiveYearTrigger" begin="undefined"/>
 	</g>
+
 
 	<g>
 		<desc>Common Chart Elements</desc>
