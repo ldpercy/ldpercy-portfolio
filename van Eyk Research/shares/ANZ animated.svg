@@ -52,7 +52,7 @@
 
 		function firstLoad()
 		{
-			alert('onload');
+			//alert('onload');
 			if (typeof svgDocument == 'undefined') { svgDocument = document; }
 			svgDocument.getElementById('fiveYearLink').setAttribute("visibility","hidden");
 			svgDocument.getElementById('twelveMonthHighlights').setAttribute('visibility','visible');
