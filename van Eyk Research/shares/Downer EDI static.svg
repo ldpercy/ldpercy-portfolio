@@ -128,10 +128,12 @@
 		<use xlink:href="#yAxisPriceTitle" x="1500" y="1500"/>
 		<use xlink:href="#legend" x="1000" y="9000"/>
 		<path class="axes" d="M 2000,2000 v 6000 h 10000 "/>
+		<!--
 		<g id="debug" transform="translate(2100,1900)" style="visibility:visible">
 			<desc>Some numbers for debug purposes</desc>
 			<text style="font-size:200;fill:grey"></text>
 		</g>
+		-->
 	</g>
 
 </svg>

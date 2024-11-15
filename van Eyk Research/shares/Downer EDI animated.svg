@@ -128,11 +128,12 @@
 		<desc>Border Box</desc>
 		<rect x="0" y="0" width="14000" height="10000" style="fill:white; stroke:black; stroke-width:15" shape-rendering="crispEdges"/>
 	</g>
-
+	<!--
 	<g id="debug" transform="translate(2100,1900)">
 		<desc>Some numbers for debug purposes</desc>
 		<text style="font-size:200;fill:grey"><tspan x="0" y="250">start of model script</tspan></text>
 	</g>
+	-->
 	<g id="fiveYearChart" class="fiveYearChart">
 		<desc>This is the five Year chart</desc>
 
