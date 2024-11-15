@@ -1,8 +1,8 @@
-<svg width="100%" height="100%" viewBox="0 0 14001 10001" onload="viewFiveYearChart('foo');omoutTwelveMonthLinkGroup('bar');" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" zoomAndPan="magnify">
+<svg width="100%" height="100%" viewBox="0 0 14001 10001" onload="firstLoad();omoutTwelveMonthLinkGroup('bar');" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" zoomAndPan="magnify">
 	<style type="text/css">
 		<![CDATA[
 		text { font-family: sans-serif; }
-		text.chartTitle { fill:#342d62; font-size:400; text-anchor:middle; font-family:verdana,sans-serif; font-variant:small-caps; font-weight:bold; }
+		text.chartTitle     { fill:#342d62; font-size:400; text-anchor:middle; font-family:verdana,sans-serif; font-variant:small-caps; font-weight:bold; }
 		path.price          { stroke:red ; stroke-width:50; stroke-linejoin:round; stroke-linecap:round; fill:none; }
 		path.movingAverage  { stroke:lime ; stroke-width:25; stroke-linejoin:round; stroke-linecap:round; fill:none; }
 		path.eps            { stroke:blue ; marker:url(#epsMarker); fill:none; stroke-dasharray:50,50 ; stroke-width:25 }
@@ -16,21 +16,23 @@
 		text.legendText     { fill:#342d62; font-size:300; }
 		circle.epsMarker    { fill:blue ; stroke:darkblue }
 		circle.epsfcMarker  { fill:green ; stroke:darkgreen }
-		rect.twelveMonthZoom      { fill:white ; fill-opacity:0.9 ; stroke-width:10 ; stroke:orange ; stroke-linejoin:round ; stroke-dasharray:200 200 }
+		rect.twelveMonthZoom      { fill:whitesmoke ; fill-opacity:0.9 ; stroke-width:20 ; stroke:none ; stroke-linejoin:round ; stroke-dasharray:500 500 }
 		.hide           { stroke:none ; fill:white ; fill-opacity:0 }
 
-		text.changeViewLink   { font-size:350 ; text-anchor:middle;}
+		@media screen   {   text.changeViewLink { font-size:350px; text-anchor:middle; fill:blue; text-decoration:underline; cursor:pointer; }  }
+		@media print    {   text.changeViewLink { fill:none; }    }
 		g.fiveYearChart     {  }
 		g.twelveMonthChart     {  }
 		]]>
 	</style>
 	<script type="text/ecmascript">
 		<![CDATA[
+
 		function omoverTwelveMonthLinkGroup(evt)
 		{
-			if(svgDocument.getElementById('twelveMonthHighlights').getAttribute('visibility') == 'visible')
+			if (currentView == 'fiveYear')
 			{
-				svgDocument.getElementById('twelveMonthLink').setAttribute('text-decoration','underline');
+				//svgDocument.getElementById('twelveMonthLink').setAttribute('text-decoration','underline');
 				svgDocument.getElementById('twelveMonthBox').setAttribute('opacity',1);
 				svgDocument.getElementById('twelveMonthChart').setAttribute('opacity',1);
 			}
@@ -38,48 +40,50 @@
 
 		function omoutTwelveMonthLinkGroup(evt)
 		{
-			if(svgDocument.getElementById('twelveMonthHighlights').getAttribute('visibility') == 'visible')
+			if (currentView == 'fiveYear')
 			{
 				svgDocument.getElementById('twelveMonthBox').setAttribute('opacity',0);
 				svgDocument.getElementById('twelveMonthChart').setAttribute('opacity',0);
-				svgDocument.getElementById('twelveMonthLink').setAttribute('text-decoration','none');
+				//svgDocument.getElementById('twelveMonthLink').setAttribute('text-decoration','none');
 			}
 		}
 
-		/*function omover12mChart()
+		function firstLoad()
 		{
-			if(svgDocument.getElementById('twelveMonthLink').getAttribute('visibility') == 'visible')
-			{
-				svgDocument.getElementById('twelveMonthBox').setAttribute('opacity',1);
-				svgDocument.getElementById('twelveMonthChart').setAttribute('opacity',1);
-			}
+			if (typeof svgDocument == 'undefined') { svgDocument = document; }
+			svgDocument.getElementById('fiveYearLink').setAttribute("visibility","hidden");
+			svgDocument.getElementById('twelveMonthHighlights').setAttribute('visibility','visible');
+			currentView = 'fiveYear';
 		}
-
-		/*function oc12mChart()
-		{
-			if(svgDocument.getElementById('twelveMonthLink').getAttribute('visibility') == 'visible')
-				viewTwelveMonthChart('foo')
-		}*/
 
 		function viewTwelveMonthChart(evt)
 		{
-			svgDocument.getElementById('twelveMonthChart').setAttribute('opacity',1);
-			svgDocument.getElementById('twelveMonthHighlights').setAttribute('visibility','hidden');
-			svgDocument.getElementById('fiveYearLink').setAttribute('visibility','visible');
+			if (currentView == 'fiveYear')
+			{
+				svgDocument.getElementById('twelveMonthChart').setAttribute('opacity',1);
+				svgDocument.getElementById('twelveMonthHighlights').setAttribute('visibility','hidden');
+				svgDocument.getElementById('fiveYearLink').setAttribute('visibility','visible');
+				svgDocument.getElementById('twelveMonthTrigger').beginElement();
+				currentView = 'twelveMonth';
+			}
 		}
 
 		function viewFiveYearChart(evt)
 		{
-			svgDocument.getElementById('fiveYearLink').setAttribute("visibility","hidden");
-			svgDocument.getElementById('twelveMonthHighlights').setAttribute('visibility','visible');
-
+			if (currentView == 'twelveMonth')
+			{
+				svgDocument.getElementById('fiveYearLink').setAttribute("visibility","hidden");
+				svgDocument.getElementById('twelveMonthHighlights').setAttribute('visibility','visible');
+				svgDocument.getElementById('fiveYearTrigger').beginElement();
+				currentView = 'fiveYear';
+			}
 		}
 		// ]]>
 	</script>
 	<defs>
 		<g id="chartTitle">
 			<desc>Chart Title</desc>
-			<text class="chartTitle" x="0" y="500" font-size="400">Downer Edi Limited</text>
+			<text class="chartTitle" font-size="400" x="0" y="500">Downer Edi Limited</text>
 		</g>
 		<g id="legend">
 			<name>Legend</name>
@@ -169,13 +173,12 @@
 			<desc>The Twelve Month Highlights: the box and text link that change on mouse over</desc>
 			<g transform="translate(2000,2000)">
 				<rect id="twelveMonthBox" class="twelveMonthZoom" x="6184" y="0" width="1428.99061033" height="4000">
-					<animate attributeName="stroke-dashoffset" attributeType="CSS" from="0" to="400" begin="twelveMonthLinkGroup.mouseover" dur="1s" end="twelveMonthLinkGroup.mouseout" fill="freeze" repeatCount="indefinite" additive="sum"/>
+
 				</rect>
 			</g>
-			<text id="twelveMonthLink" class="changeViewLink" font-size="350" x="7500" y="1500">
+			<text id="twelveMonthLink" class="changeViewLink" font-size="350" x="7500" y="1800">
 				View last twelve months
-				<set attributeType="CSS" attributeName="text-decoration" to="underline" begin="twelveMonthLinkGroup.mouseover" dur="0.1s" fill="freeze"/>
-				<set attributeType="CSS" attributeName="text-decoration" to="none" begin="twelveMonthLinkGroup.mouseout" dur="0.1s" fill="freeze"/>
+
 			</text>
 		</g>
 
@@ -220,11 +223,14 @@
 		</g>
 	</g>
 
-	<text id="fiveYearLink" class="changeViewLink" font-size="350" x="7500" y="1500" onclick="viewFiveYearChart(evt)">
-		View Five Year Chart
-		<set attributeType="CSS" attributeName="text-decoration" to="underline" begin="fiveYearLink.mouseover" fill="freeze"/>
-		<set attributeType="CSS" attributeName="text-decoration" to="none" begin="fiveYearLink.mouseout" fill="freeze"/>
-	</text>
+	<a id="fiveYearLink" onclick="viewFiveYearChart(evt)">
+		<text class="changeViewLink" font-size="350" x="7500" y="1800">View Five Year Chart</text>
+	</a>
+
+	<g style="display:none">
+		<set id="twelveMonthTrigger" begin="undefined"/>
+		<set id="fiveYearTrigger" begin="undefined"/>
+	</g>
 
 	<g>
 		<desc>Common Chart Elements</desc>
