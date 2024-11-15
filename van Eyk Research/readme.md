@@ -55,7 +55,7 @@ Our users were directed to install the plugin.
 
 For the charts viewed on the website I added a simple zooming animation using SMIL and EcmaScript.
 
-There are working examples of the animated charts in the `shares` folder, however GitHub's CSP header currently prevents the scripts from running (until I find a workaround):
+There are working examples of the animated charts in the `shares` folder, however GitHub's CSP header currently prevents the scripts from running when clicked through directly (until I find a workaround):
 
 	content-security-policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
 
