@@ -20,6 +20,8 @@ iRate Online
 Fund and Share profiles
 -----------------------
 
+[Fund Profile - 14175 original design.pdf](<pdf/Fund Profile - 14175 original design.pdf>)
+
 A significant part of my work was producing Fund and Share product reports (profiles).
 
 Features included:
@@ -45,8 +47,10 @@ Share charts were produced with a custom engine I wrote myself; fund charts were
 Share charts
 ------------
 
-I wrote the charting engine for the SVG share charts seen in the reports.
-At the time (early 2000s) no mainstream browser had a working SVG implementation; the only option was a surprisingly feature-complete browser plugin from Adobe (Adobe SVG Viewer).
+![alt text](<shares/FXJ static.svg>)
+
+I wrote the charting engine for the SVG share charts seen in the screenshots and reports.
+At the time (early 2000s) no mainstream browser had a working SVG implementation, the only option was a surprisingly feature-complete browser plugin from Adobe (Adobe SVG Viewer).
 Our users were directed to install the plugin.
 
 For the charts viewed on the website I added a simple zooming animation using SMIL and EcmaScript.
