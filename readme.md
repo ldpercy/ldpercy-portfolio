@@ -5,7 +5,9 @@ Examples of my work.
 
 
 
-## [van Eyk Research](./van%20Eyk%20Research/readme.md)
+## van Eyk Research
+
+[readme](./van%20Eyk%20Research/readme.md)
 
 Software Engineer/Web Developer
 
