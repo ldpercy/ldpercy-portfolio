@@ -1,0 +1,30 @@
+<!-- Copyright 2003 van Eyk Research All Rights Reserved.
+$Header: $
+$History: $
+====================================================================================================
+Description:
+    SVG van Eyk Logo (graphics only, no text)
+    By: Paul Dale 14/3/2003
+    Dimensions: 40*40 (unitless)
+
+====================================================================================================
+Dependencies:
+=====================================================================================================
+-->
+
+<!-- XML headers - may be required by some programs:
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+-->
+
+<svg viewBox="0 0 40 40" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+
+    <rect x="0" y="0" width="40" height="40" style="fill:white;"/>
+
+    <rect x="1" y="1" width="15" height="15" style="fill:#342d62;"/>
+
+    <path style="fill:silver;" d="M 26 26 v -20 A 15,15 0 0 0 6,26 Z"/>
+
+    <circle cx="20" cy="20" r="15" style="fill:none;stroke-width:2.5;stroke:#342d62;"/>
+
+</svg>

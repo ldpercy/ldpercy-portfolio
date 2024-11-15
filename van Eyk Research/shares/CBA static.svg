@@ -1,0 +1,109 @@
+
+
+<svg class="main" viewBox="500 1000 13000 9000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  preserveAspectRatio="xMidYMid meet" width="100%" height="100%">
+
+
+    <style type="text/css"><![CDATA[
+        svg.main            { fill: white; }
+        text                { font-family: verdana,sans-serif; }
+        text.chartTitle     { fill:#342d62; font-size:400; text-anchor:start; font-family:verdana,sans-serif; font-variant:small-caps; font-weight:bold; }
+        path.gridLine       { stroke:grey; stroke-width:10; stroke-dasharray:100,100 ; fill:none }
+        path.price          { stroke:red; stroke-width:50; stroke-linejoin:round; stroke-linecap:round; fill:none; }
+        path.movingAverage  { stroke:grey; stroke-width:25; stroke-linejoin:round; stroke-linecap:round; fill:none; }
+        path.eps            { stroke:blue; marker:url(#epsMarker); fill:none; stroke-dasharray:50,50 ; stroke-width:25; }
+        path.epsfc          { stroke:whitesmoke; marker-mid:url(#epsfcMarker); marker-end:url(#epsfcMarker) ; fill:none; stroke-dasharray:50,50 ; stroke-width:25; }
+        text.xAxisLabels    { font-size:300; text-anchor:middle; fill:#342d62; }
+        text.priceLabels    { font-size:300; text-anchor:end; baseline-shift:-30%; fill:#342d62; }
+        text.EPSLabels      { font-size:300; text-anchor:start; baseline-shift:-30%; fill:#342d62; }
+        text.xAxisTitle     { fill:grey; font-size:250; text-anchor:middle; }
+        text.yAxisTitle     { fill:grey; font-size:250; text-anchor:middle; }
+        path.axes           { fill:none; stroke:black; stroke-width:25 ; shape-rendering:crispEdges; }
+        text.legendText     { fill:#342d62 ; font-size:250; }
+        circle.epsMarker    { fill:blue; stroke:darkblue; }
+        circle.epsfcMarker  { fill:lightgrey; stroke:grey; }
+        rect.twelveMonthZoom      { fill:whitesmoke; fill-opacity:0.9; stroke-width:20; stroke:none; stroke-linejoin:round ; stroke-dasharray:500 500; }
+        text.copyrightNotice { fill:#cec7d6 ; font-size:200; text-anchor:end; opacity:0; }
+    ]]></style>
+
+    <!--
+    svg.main            { height:100% ; width:100%; }
+    -->
+
+    <defs>
+
+        <g id="legend">
+            <desc>Legend</desc>
+            <rect x="0" y="0" width="12000" height="600" style="fill:white; stroke:grey" shape-rendering="crispEdges"/>
+            <text class="legendText" style="fill:#342d62; font-size:250;">
+                <tspan x="1000" y="400">CBA Price</tspan>
+                <tspan x="3500" y="400">12 Month Moving Average</tspan>
+                <tspan x="8000" y="400">EPS</tspan>
+                <tspan x="10000" y="400">EPS Forecast</tspan>
+            </text>
+            <path class="price" style="stroke:red; stroke-width:50; stroke-linejoin:round; stroke-linecap:round; fill:none;" d="M 300 300 h 500"/>
+            <path class="movingAverage" style="stroke:grey; stroke-width:25; stroke-linejoin:round; stroke-linecap:round; fill:none;" d="M 2800 300 h 500"/>
+            <path class="eps" style="stroke:blue; marker:url(#epsMarker); fill:none; stroke-dasharray:50,50; stroke-width:25;" d="M 7300 300 h 500"/>
+            <path class="epsfc" style="stroke:whitesmoke; marker-mid:url(#epsfcMarker); marker-end:url(#epsfcMarker); fill:none; stroke-dasharray:50,50; stroke-width:25;" d="M 9300 300 h 500"/>
+        </g>
+
+        <g id="xAxisTitle">
+            <desc>X Axis Title</desc>
+            <text class="xAxisTitle" style="fill:grey; font-size:250; text-anchor:middle;">Date</text>
+        </g>
+        <g id="yAxisPriceTitle">
+            <desc>Y Axis Title</desc>
+            <text class="yAxisTitle" style="fill:grey; font-size:250; text-anchor:middle;">Price ($)</text>
+        </g>
+        <g id="yAxisEPSTitle">
+            <desc>Y Axis Title</desc>
+            <text class="yAxisTitle" style="fill:grey; font-size:250; text-anchor:middle;">EPS ($)</text>
+        </g>
+        <marker id="epsMarker" markerWidth="10" markerHeight="10" refX="5" refY="5">
+            <circle class="epsMarker" style="fill:blue; stroke:darkblue;" cx="5" cy="5" r="4"/>
+        </marker>
+        <marker id="epsfcMarker" markerWidth="10" markerHeight="10" refX="5" refY="5">
+            <circle class="epsfcMarker" style="fill:lightgrey; stroke:grey;" cx="5" cy="5" r="4"/>
+        </marker>
+    </defs>
+
+
+
+    <g id="fiveYearChart" class="fiveYearChart">
+        <desc>This is the five Year chart</desc>
+        <use xlink:href="#yAxisEPSTitle" x="12500" y="1500"/>
+        <g transform="translate(2000,2000)">
+            <desc>Chart Area</desc>
+            <path class="gridLine" style="stroke:grey; stroke-width:10; stroke-dasharray:100,100; fill:none;" d="M 0 0 h 10000 M 0 1500 h 10000 M 0 3000 h 10000 M 0 4500 h 10000 M 0 6000 h 10000 "/>
+            <path class="eps" style="stroke:blue; marker:url(#epsMarker); fill:none; stroke-dasharray:50,50; stroke-width:25;" d="M 1865 4812 3111 4212 4367 5778 5619 4593 6869 1407"/>
+            <path class="epsfc" style="stroke:whitesmoke; marker-mid:url(#epsfcMarker); marker-end:url(#epsfcMarker); fill:none; stroke-dasharray:50,50; stroke-width:25;" d="M 6869 1407 8018 1882 9268 1312"/>
+            <path class="movingAverage" style="stroke:grey; stroke-width:25; stroke-linejoin:round; stroke-linecap:round; fill:none;" d="M 1975 2973 2081 2990 2177 3027 2290 2976 2392 2979 2498 3019 2604 2977 2700 2969 2799 2926 2909 2828 3015 2720 3111 2680 3224 2749 3326 2717 3433 2699 3539 2600 3638 2661 3747 2698 3854 2791 3949 2980 4055 3126 4158 3237 4261 3343 4367 3435 4473 3506 4572 3578 4682 3651 4788 3712 4884 3776 4997 3723 5099 3642 5195 3509 5308 3307 5411 3187 5517 3064 5619 2964 5722 2925 5832 2917 5934 2868 6034 2766 6143 2676 6249 2572 6355 2478 6451 2346 6557 2271 6656 2200 6766 2067 6869 1942 6968 1792"/>
+            <path class="price" style="stroke:red; stroke-width:50; stroke-linejoin:round; stroke-linecap:round; fill:none;" d="M 831.6 3695 930.9 3720 1040 3387 1143 2492 1242 2729 1355 2400 1451 2943 1554 3420 1660 3348 1766 2640 1865 1755 1975 3150 2081 3196 2177 4170 2290 3060 2392 3420 2498 3018 2604 2178 2700 2293 2799 2388 2909 2145 3015 1950 3111 2121 3224 2649 3326 2739 3433 2958 3539 2880 3638 3855 3747 3900 3854 4227 3949 4638 4055 4185 4158 3834 4261 3528 4367 3135 4473 3045 4572 3585 4682 3690 4788 3750 4884 3720 4997 3165 5099 2847 5195 2496 5308 2010 5411 2625 5517 2235 5619 2226 5722 2634 5832 2940 5934 2943 6034 2370 6143 2577 6249 2370 6355 1944 6451 1131 6557 1512 6656 1098 6766 885 6869 615 6968 282 7050 816 7053 855 7057 975"/>
+
+            <path class="axes" style="fill:none; stroke:black; stroke-width:25; shape-rendering:crispEdges;" d="M 0 6000 v 100 M 1250 6000 v 100 M 2500 6000 v 100 M 3750 6000 v 100 M 5000 6000 v 100 M 6250 6000 v 100 M 7500 6000 v 100 M 8750 6000 v 100 M 10000 6000 v 100 "/>
+            <text id="XLabels" class="xAxisLabels" style="font-size:300; text-anchor:middle; fill:#342d62;">
+                <desc>X Axis Marker Labels for Five Year Chart</desc>
+                <tspan x="0" y="6500">2000</tspan><tspan x="1250" y="6500">2001</tspan><tspan x="2500" y="6500">2002</tspan><tspan x="3750" y="6500">2003</tspan><tspan x="5000" y="6500">2004</tspan><tspan x="6250" y="6500">2005</tspan><tspan x="7500" y="6500">2006</tspan><tspan x="8750" y="6500">2007</tspan><tspan x="10000" y="6500">2008</tspan>
+            </text>
+            <path class="axes" style="fill:none; stroke:black; stroke-width:25; shape-rendering:crispEdges;" d="M 0 0 h -100 M 0 1500 h -100 M 0 3000 h -100 M 0 4500 h -100 M 0 6000 h -100 "/>
+            <text id="YLabels" class="priceLabels" style="font-size:300; text-anchor:end; baseline-shift:-30%; fill:#342d62;">
+                <desc>Y Axis Marker Labels for fiveYearPrice</desc>
+                <tspan x="-300" y="6000">20.00</tspan><tspan x="-300" y="4500">25.00</tspan><tspan x="-300" y="3000">30.00</tspan><tspan x="-300" y="1500">35.00</tspan><tspan x="-300" y="0">40.00</tspan>
+            </text>
+            <path class="axes" style="fill:none; stroke:black; stroke-width:25; shape-rendering:crispEdges;" d="M 10000 0 v 6000"/>
+            <path class="axes" style="fill:none; stroke:black; stroke-width:25; shape-rendering:crispEdges;" d="M 10000 0 h 100 M 10000 1500 h 100 M 10000 3000 h 100 M 10000 4500 h 100 M 10000 6000 h 100 "/>
+            <text id="EPSLabels" class="EPSLabels" style="font-size:300; text-anchor:start; baseline-shift:-30%; fill:#342d62;">
+                <desc>Y Axis Marker Labels for eps</desc>
+                <tspan x="10300" y="6000">1.50</tspan><tspan x="10300" y="4500">2.00</tspan><tspan x="10300" y="3000">2.50</tspan><tspan x="10300" y="1500">3.00</tspan><tspan x="10300" y="0">3.50</tspan>
+            </text>
+        </g>
+    </g>
+
+    <g>
+        <desc>Common Chart Elements</desc>
+        <use xlink:href="#xAxisTitle" x="12000" y="8900" style="display:none"/>
+        <use xlink:href="#yAxisPriceTitle" x="1500" y="1500"/>
+        <use xlink:href="#legend" x="1000" y="9000"/>
+        <path class="axes" style="fill:none; stroke:black; stroke-width:25; shape-rendering:crispEdges;" d="M 2000,2000 v 6000 h 10000 "/>
+
+    </g>
+</svg>

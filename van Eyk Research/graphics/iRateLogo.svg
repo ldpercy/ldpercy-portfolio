@@ -1,0 +1,18 @@
+<svg width="70px" height="80px" viewBox="-30 -40 70 80" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <style type="text/css" id="idStyles">
+  <![CDATA[
+      path.iRate   { stroke: #342D62; fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+      path.iRateFill   { stroke: #342D62; fill: #342D62; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+  ]]>
+  </style>
+  <g>
+    <desc>iRate Logo Animation</desc>
+    <path class="iRate" id="idOuter" d="M 2 -30 A30 -30 0 0 1 2 30 M 32 0 L 38 0"/>
+    <path class="iRate" id="idOuter" d="M 0 -20 A20 20 0 1 0 0 20">
+      <animateTransform attributeName="transform" type="rotate" attributeType="XML" from="0" to="360" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path class="iRateFill" id="idInner" d="M 0 -7 A7 7 0 1 0 4.95 -4.95 A1.75 1.75 0 0 1 0 -7">
+      <animateTransform attributeName="transform" type="rotate" attributeType="XML" from="360" to="0" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+</svg>

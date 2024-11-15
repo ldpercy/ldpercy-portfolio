@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-40 90 420 410" preserveAspectRatio="xMidYMid meet"  >
+    <!--
+    color-rendering="auto" color-interpolation="auto" stroke="black" text-rendering="auto" stroke-linecap="square" stroke-miterlimit="10" stroke-opacity="1"
+    shape-rendering="auto" fill="black" stroke-dasharray="none" font-weight="normal" stroke-width="1"
+    font-family="&apos;Dialog&apos;" font-style="normal" stroke-linejoin="miter" font-size="12" stroke-dashoffset="0" image-rendering="auto"
+    fill-opacity="1"
+    -->
+
+    <!--Unicode Character 'LEFT CURLY BRACKET' (U+007B)-->
+
+    <style type="text/css">
+        <![CDATA[
+        .standard { fill:black; stroke:none; }
+        .outline { fill:none; stroke:black; }
+        .thinBorder { stroke-width:5; stroke-linecap:round; stroke-linejoin:round; }
+        .mediumBorder { stroke-width:10; stroke-linecap:butt; stroke-linejoin:miter; }
+        .fat { stroke-width:15; stroke-linecap:round; stroke-linejoin:round; }
+        .fatter { stroke-width:30; stroke-linecap:round; stroke-linejoin:round; }
+
+        .black { fill:black; stroke:black; }
+        .red { fill:pink; stroke:red; }
+        .blue { fill:lightblue; stroke:blue; }
+        .green { fill:lightgreen; stroke:green; }
+
+        .decoratorBackground { fill:white; stroke:white; opacity:0.5; }
+
+        .redBorder { fill:white; stroke:red; }
+
+        .redGradient { stroke:url(#whiteToRedVertical); fill:url(#redToWhiteVertical); }
+        .blueGradient { stroke:url(#cyanToBlueVertical); fill:url(#blueToCyanVertical); }
+        .greenGradient { stroke:url(#limeToGreenVertical); fill:url(#greenToLimeVertical); }
+        .darkGreenGradient { stroke:url(#greenToDarkGreenVertical); fill:url(#darkGreenToGreenVertical); }
+
+        .greenBlack { stroke:black; fill:url(#darkGreenToGreenVertical); }
+
+        .redToWhiteVertical { fill:url(#redToWhiteVertical); stroke:url(#redToWhiteVertical); }
+        ]]>
+    </style>
+
+
+    <!--
+    My server version of batik is having issues with the xlinked gradients so i've had to write
+    write them out longhand to make them work when doing my own transcoding.
+    -->
+
+
+    <!--
+    <linearGradient x1="58.858898" y1="44.767601" x2="58.858898" y2="11.640600" id="XMLID_5_" gradientUnits="userSpaceOnUse">
+	    <stop style="stop-color:#091858;stop-opacity:1.0000000" offset="0.00000000" id="stop9928"/>
+	    <stop style="stop-color:#1d2b66;stop-opacity:1.0000000" offset="0.051100001" id="stop9930"/>
+	</linearGradient>
+    -->
+
+    <linearGradient id="whiteToRedVertical" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1"  id="whiteToRed_white"/>
+        <stop offset="60%" style="stop-color:#ff0000;stop-opacity:1"  id="whiteToRed_mid"/>
+        <stop offset="100%" style="stop-color:#ff0000;stop-opacity:1"  id="whiteToRed_red"/>
+    </linearGradient>
+
+    <linearGradient id="redToWhiteVertical" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#ff0000;stop-opacity:1"  id="whiteToRed_white"/>
+        <stop offset="60%" style="stop-color:#ff0000;stop-opacity:1"  id="whiteToRed_mid"/>
+        <stop offset="100%" style="stop-color:#ffffff;stop-opacity:1"  id="whiteToRed_red"/>
+    </linearGradient>
+
+
+    <!--
+    <linearGradient id="whiteToRedVertical" xlink:href="#whiteToRed" x1="0%" y1="0%" x2="0%" y2="100%" />
+    <linearGradient id="redToWhiteVertical" xlink:href="#whiteToRed" x1="0%" y1="100%" x2="0%" y2="0%" />
+    -->
+
+
+    <linearGradient id="cyanToBlueVertical" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1"  id="cyanToBlue_cyan"/>
+        <stop offset="60%" style="stop-color:#0000ff;stop-opacity:1"  id="cyanToBlue_mid"/>
+        <stop offset="100%" style="stop-color:#0000ff;stop-opacity:1"  id="cyanToBlue_blue"/>
+    </linearGradient>
+
+    <linearGradient id="blueToCyanVertical" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#00ff;stop-opacity:1"  id="cyanToBlue_cyan"/>
+        <stop offset="60%" style="stop-color:#0000ff;stop-opacity:1"  id="cyanToBlue_mid"/>
+        <stop offset="100%" style="stop-color:#00ffff;stop-opacity:1"  id="cyanToBlue_blue"/>
+    </linearGradient>
+
+    <!--
+    <linearGradient id="cyanToBlueVertical" xlink:href="#cyanToBlue" x1="0%" y1="0%" x2="0%" y2="100%" />
+    <linearGradient id="blueToCyanVertical" xlink:href="#cyanToBlue" x1="0%" y1="100%" x2="0%" y2="0%" />
+    -->
+
+
+    <linearGradient id="limeToGreenVertical" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#00ff00;stop-opacity:1"  id="limeToGreen_lime"/>
+        <stop offset="60%" style="stop-color:#008800;stop-opacity:1"  id="limeToGreen_mid"/>
+        <stop offset="100%" style="stop-color:#008800;stop-opacity:1"  id="limeToGreen_green"/>
+    </linearGradient>
+
+    <linearGradient id="greenToLimeVertical" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#008800;stop-opacity:1"  id="limeToGreen_lime"/>
+        <stop offset="60%" style="stop-color:#008800;stop-opacity:1"  id="limeToGreen_mid"/>
+        <stop offset="100%" style="stop-color:#00ff00;stop-opacity:1"  id="limeToGreen_green"/>
+    </linearGradient>
+
+
+    <linearGradient id="greenToDarkGreenVertical" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#00ff00;stop-opacity:1" />
+        <stop offset="60%" style="stop-color:#006600;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#006600;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="darkGreenToGreenVertical" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#006600;stop-opacity:1"  id="darkGreenToGreen_darkGreen"/>
+        <stop offset="60%" style="stop-color:#006600;stop-opacity:1"  id="darkGreenToGreen_mid"/>
+        <stop offset="100%" style="stop-color:#00ff00;stop-opacity:1"  id="darkGreenToGreen_green"/>
+    </linearGradient>
+
+
+
+    <!--
+    <linearGradient id="limeToGreenVertical" xlink:href="#limeToGreen" x1="0%" y1="0%" x2="0%" y2="100%" />
+    <linearGradient id="greenToLimeVertical" xlink:href="#limeToGreen" x1="0%" y1="100%" x2="0%" y2="0%" />
+    -->
+
+
+
+    <!-- add with filter="url(#drop-shadow)" -->
+    <filter id="drop-shadow" x="-50%" y="-50%" width="500%" height="200%">
+
+        <feColorMatrix type="matrix" values="
+            0 0 0.0 1.0 0
+            0 0 0.0 1.0 0
+            0 0 0.0 1.0 0
+            0 0 0.0 1.0 0
+            "/>
+
+        <feGaussianBlur stdDeviation="40" result="blur"/> <!-- in="SourceAlpha" -->
+        <!--feOffset in="blur" dx="5" dy="5" result="offsetBlur"/-->
+
+        <feMerge>
+            <!--feMergeNode in="offsetBlur"/-->
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+    </filter>
+
+
+
+
+    <!--
+    <filter id="original-drop-shadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="0.7" result="blur"/>
+        <feOffset in="blur" dx="-2" dy="2" result="offsetBlur"/>
+        <feMerge>
+            <feMergeNode in="offsetBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+    </filter>
+    -->
+
+    <!-- border holder
+    <rect x="-40" y="90" width="420" height="410" stroke="red" fill="none" />
+    -->
+
+    <g class="fat black">
+
+	    <!-- curly brace ie '{'
+	    the following rect gives the exact bounds of the simplified brace:
+	    <rect class="red" x="8" y="176" width="81" height="270"/>
+
+		<path d="
+	    M89 446
+		L81 446
+		Q70 446 61 444
+		Q53 442 46 434
+		Q40 425 39 414
+		Q37 403 37 377
+		Q37 359 35 348
+		Q34 337 27 330
+		Q21 323 8 322
+		L8 299
+		Q21 299 27 292
+		Q34 285 35 274
+		Q37 263 37 245
+		Q37 219 38 208
+		Q40 197 46 188
+		Q53 180 61 178
+		Q69 176 81 176
+		L89 176
+		L89 198
+		L84 198
+		Q70 198 65 203
+		Q60 208 60 227
+		Q60 258 59 271
+		Q58 285 51 294
+		Q45 304 31 311
+		Q45 317 53 330
+		Q60 342 60 374
+		Q60 404 62 410
+		Q63 417 66 420
+		Q70 424 84 424
+		L89 424
+		L89 446
+	    Z
+	    "/>
+        -->
+
+	    <!--
+	    The original brace:
+	    <path d="M89.2969 446.3438 L81.5625 446.3438 Q70.0312 446.3438 61.6641 444.3047 Q53.2969 442.2656 46.9688 434.1094 Q40.6406 425.9531 39.0234 414.7031 Q37.4062 403.4531 37.125 377.2969 Q37.125 359.0156 35.6484 348.3281 Q34.1719 337.6406 27.8438 330.3281 Q21.5156 323.0156 8.0156 322.7344 L8.0156 299.8125 Q21.5156 299.5312 27.8438 292.2891 Q34.1719 285.0469 35.6484 274.3594 Q37.125 263.6719 37.125 245.3906 Q37.4062 219.375 38.9531 208.1953 Q40.5 197.0156 46.7578 188.7188 Q53.0156 180.4219 61.4531 178.3125 Q69.8906 176.2031 81.5625 176.2031 L89.2969 176.2031 L89.2969 198.1406 L84.9375 198.1406 Q70.4531 198.1406 65.6016 203.4141 Q60.75 208.6875 60.75 227.25 Q60.75 258.0469 59.4141 271.8281 Q58.0781 285.6094 51.9609 294.9609 Q45.8438 304.3125 31.3594 311.3438 Q45.7031 317.1094 53.2266 330.0469 Q60.75 342.9844 60.75 374.9062 Q60.75 404.2969 62.0156 410.9062 Q63.2812 417.5156 66.8672 420.9609 Q70.4531 424.4062 84.9375 424.4062 L89.2969 424.4062 L89.2969 446.3438 Z"/>
+	    -->
+
+        <!-- bullet points
+        y midpoints: 206, 276, 346, 416
+        -->
+        <g>
+            <rect x="45" y="186" width="40" height="40" />
+            <rect x="45" y="256" width="40" height="40" />
+            <rect x="45" y="326" width="40" height="40" />
+            <rect x="45" y="396" width="40" height="40" />
+        </g>
+
+
+        <!-- items
+        y midpoints: 206, 276, 346, 416
+        -->
+        <rect x="120" y="196" width="180" height="20"/>
+        <rect x="120" y="266" width="180" height="20"/>
+        <rect x="120" y="336" width="180" height="20"/>
+        <rect x="120" y="406" width="180" height="20"/>
+
+
+
+        <!-- percentage
+        <g>
+	        <rect x="130" y="240" width="40" height="40" />
+	        <rect transform="rotate(135,210,310)" x="120" y="310" width="190" height="22"/>
+	        <rect x="230" y="340" width="40" height="40" />
+        </g>
+        -->
+
+
+
+        <!-- benchmark
+        Want to try a very simple chart for this
+        <g>
+            <path class="redToWhiteVertical" d="M 70 360 l 80 -60 l 30 30 l 100 -80 l 0 150 l -210 0 z" />
+            <path class="fatter outline" d="M 50 220 l 0 180 l 240 0 "/>
+        </g>
+-->
+        <!--path class="fatter red" d="M 70 360 l 80 -60 l 30 30 l 100 -80 "/-->
+
+    </g>
+
+
+
+
+    <g>
+        <!-- action decorators -->
+        <!-- may need a 50% opacity fadeout behind probably-->
+        <rect class="decoratorBackground" x="-50" y="100" width="450" height="400"/>
+
+
+
+        <!-- add: green plus
+        current dimensions (sans borders): 200*200
+        -->
+        <path class="greenBlack mediumBorder" filter="url(#drop-shadow)"
+            d="
+            M 0 260
+            l  0 -60   70  0   0 -70
+            l  60  0  -0  70   70  0
+            l -0 60   -70 -0  -0  70
+            l -60 -0   0 -70  -70 -0
+            z
+            "/>
+
+
+        <!-- import: blue southeast arrow take 1
+        <path class="blueGradient thinBorder" filter="url(#drop-shadow)"
+            d="
+            M 180 180
+            l    80 80  40 -40   00 113
+            l  -113 00  40 -40  -80 -80
+            z
+            "/>
+        -->
+
+        <!-- import: blue southeast arrow take 2
+
+        <path class="blueGradient thinBorder" filter="url(#drop-shadow)"
+            d="
+            M 30 130
+            l    80 80  40 -40   00 160
+            l  -160 00  40 -40  -80 -80
+            z
+            "/>
+        -->
+
+        <!-- export: blue northeast arrow
+
+        <path class="blueGradient thinBorder" filter="url(#drop-shadow)"
+            d="
+            M 150 250
+            l  80 -80 -40 -40   160 00
+            l  00 160 -40 -40  -80 80
+            z
+            "/>
+        -->
+
+        <!-- delete: red x
+        current dimensions (sans borders): 140*140
+        <path class="thinBorder redGradient" filter="url(#drop-shadow)"
+            d="
+            M 180 180
+            l  30 -30   40  40   40 -40
+            l  30  30  -40  40   40  40
+            l -30  30  -40 -40  -40  40
+            l -30 -30   40 -40  -40 -40
+            z
+            "/>
+        -->
+
+    </g>
+
+
+</svg>
