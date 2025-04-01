@@ -100,3 +100,16 @@ Technologies
 * Subversion
 * Visual Sourcesafe
 
+
+Miscellaneous Graphics
+----------------------
+
+<img src="graphics/vanEykLogo.svg" alt="van Eyk Logo" width="20%"/>
+<img src="graphics/vanEykIcon.svg" alt="van Eyk Icon" width="20%"/>
+<img src="graphics/iRateLogo.svg" alt="iRate Logo" width="20%"/>
+
+<img src="graphics/vanEykSwirl.svg" alt="van Eyk Swirl" width="60%"/>
+
+<img src="graphics/SvE.svg" alt="Stephen van Eyk" width="60%"/>
+
+
