@@ -6,6 +6,18 @@ At the time van Eyk were considered Australia's most respected financial researc
 Clients and business relationships included BT, Coin (Macquarie), Oasis, OnePath, AMP, Count, Morningstar, Aspect Huntley, IRESS, FundData, Core Equity Services (CommSec), Bloomberg.
 
 
+- [van Eyk Research](#van-eyk-research)
+	- [iRate Online](#irate-online)
+		- [Shares section](#shares-section)
+		- [Quantitative Analysis](#quantitative-analysis)
+	- [Fund and Share profiles](#fund-and-share-profiles)
+	- [Share charts](#share-charts)
+	- [van Eyk Conference website](#van-eyk-conference-website)
+	- [Technologies](#technologies)
+	- [Miscellaneous Graphics](#miscellaneous-graphics)
+
+
+
 iRate Online
 ------------
 
