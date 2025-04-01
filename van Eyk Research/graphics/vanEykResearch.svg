@@ -1,0 +1,13 @@
+<svg viewBox="5 0 200 45" width="6cm" height="1.35cm" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+
+    <!--<rect x="5" y="0" width="200" height="45" style="fill:pink;stroke:red;"/>-->
+
+    <text x="52" y="31" style="font-family:Arial,Helvetica,sans-serif;font-size:17;font-weight:bold;fill:#342d62;">van Eyk Research</text>
+
+    <rect x="11" y="6" width="15" height="15" style="fill:#342d62;"/>
+
+    <path style="fill:silver;" d="M 36 31 v -20 A 15,15 0 0 0 16,31 Z"/>
+
+    <circle cx="30" cy="25" r="15" style="fill:none;stroke-width:2.5;stroke:#342d62;"/>
+
+</svg>
